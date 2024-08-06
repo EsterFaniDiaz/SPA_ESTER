@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ClassLibrary1.Servicios>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_ser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripción_ser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_ser)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_ser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripción_ser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_ser)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_servicios }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_servicios }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_servicios })
+        </td>
+    </tr>
+}
+
+</table>

@@ -131,6 +131,7 @@
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Metodos_Pago1Controller.cs" />
     <Compile Include="Controllers\Metodos_PagoController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
@@ -297,6 +298,11 @@
     <Content Include="Views\Facturas\Details.cshtml" />
     <Content Include="Views\Facturas\Edit.cshtml" />
     <Content Include="Views\Facturas\Index.cshtml" />
+    <Content Include="Views\Metodos_Pago1\Create.cshtml" />
+    <Content Include="Views\Metodos_Pago1\Delete.cshtml" />
+    <Content Include="Views\Metodos_Pago1\Details.cshtml" />
+    <Content Include="Views\Metodos_Pago1\Edit.cshtml" />
+    <Content Include="Views\Metodos_Pago1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
