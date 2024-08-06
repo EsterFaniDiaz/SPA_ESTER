@@ -1,0 +1,64 @@
+﻿@model ClassLibrary1.Servicios
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Actualización Servicios</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id_servicios)
+
+
+    <div class="row pt-3">
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.nombre_ser, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.nombre_ser, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombre_ser, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.descripción_ser, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.descripción_ser, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.descripción_ser, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+
+    <div class="row pt-3">
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.precio_ser, "Precio", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.precio_ser, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.precio_ser, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-md-6 form-group ">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <!-- Botón de Crear con estilo de Bootstrap -->
+                    <input type="submit" value="Actualizar" class="btn btn-primary" /> |
+                    <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

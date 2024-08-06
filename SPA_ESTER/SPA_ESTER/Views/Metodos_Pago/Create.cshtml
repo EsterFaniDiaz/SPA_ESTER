@@ -1,0 +1,31 @@
+﻿@model ClassLibrary1.Metodos_Pago
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Crear Metodo de Pago</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <!-- Botón de Crear con estilo de Bootstrap -->
+            <input type="submit" value="Crear" class="btn btn-primary" /> |
+            <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd4477bdd42f4257ae2b1371f35dba22" Name="Diagram1">
+        <EntityTypeShape EntityType="Spa_EsterModel.Administrador" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Clientes" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Empleados" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Facturas" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Metodos_Pago" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Reservas" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Servicios" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Usuarios" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Administr__id_us__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Clientes__id_usu__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Reservas__id_cli__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Reservas__id_emp__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Facturas__id_res__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Reservas__id_met__33D4B598" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

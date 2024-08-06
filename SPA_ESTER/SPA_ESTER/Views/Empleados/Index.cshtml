@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ClassLibrary1.Empleados>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Empleados</h2>
+<p>
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Teléfono
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Correo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_emp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teléfono_emp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dirección_emp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo_emp)
+        </td>
+        <td>
+
+            @Html.ActionLink("Actualizar", "Edit", new { id = item.id_empleados }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Consultar" estilizado como un botón -->
+            @Html.ActionLink("Consultar", "Details", new { id = item.id_empleados }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Eliminar" estilizado como un botón -->
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleados }, new { @class = "btn btn-primary btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

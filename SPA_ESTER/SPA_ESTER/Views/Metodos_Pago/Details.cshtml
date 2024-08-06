@@ -1,0 +1,22 @@
+﻿@model ClassLibrary1.Metodos_Pago
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h4>Consultar Metodos de Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+
+
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.id_metodos_pg }, new { @class = "btn btn-primary btn-sm" }) |
+
+    <!-- Enlace "Regresar" estilizado como un botón secundario -->
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

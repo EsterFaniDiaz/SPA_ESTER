@@ -1,0 +1,27 @@
+﻿@model ClassLibrary1.Metodos_Pago
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Eliminar Metodo de Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <!-- Botón de Crear con estilo de Bootstrap -->
+                <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+                <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+            </div>
+        </div>
+    }
+</div>
+ 

@@ -1,0 +1,69 @@
+﻿@model ClassLibrary1.Empleados
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Agregar Empleados</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row pt-3">
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.nombre_emp, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.nombre_emp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombre_emp, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.teléfono_emp, "Teléfono", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.teléfono_emp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.teléfono_emp, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+
+    <div class="row pt-3">
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.dirección_emp, "Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.dirección_emp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dirección_emp, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6 form-group ">
+            @Html.LabelFor(model => model.correo_emp, "Correo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.correo_emp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.correo_emp, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="row pt-3">
+
+        <div class="col-md-6 form-group ">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <!-- Botón de Crear con estilo de Bootstrap -->
+                    <input type="submit" value="Crear" class="btn btn-primary" /> |
+                    <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

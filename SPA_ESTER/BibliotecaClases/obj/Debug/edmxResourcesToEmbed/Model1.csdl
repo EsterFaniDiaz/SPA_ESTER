@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Spa_base_esterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="id_ad" />
+    </Key>
+    <Property Name="id_ad" Type="Int32" Nullable="false" />
+    <Property Name="nombre_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="teléfono_ad" Type="Int32" />
+    <Property Name="dirección_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="correo_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_usuario" Type="Int32" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Administr__id_us__267ABA7A" FromRole="Administrador" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_clientes" />
+    </Key>
+    <Property Name="id_clientes" Type="Int32" Nullable="false" />
+    <Property Name="nombre_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="teléfono_cl" Type="Int32" />
+    <Property Name="dirección_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="correo_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_usuario" Type="Int32" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Clientes__id_usu__29572725" FromRole="Clientes" ToRole="Usuarios" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_cli__32E0915F" FromRole="Clientes" ToRole="Reservas" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="id_empleados" />
+    </Key>
+    <Property Name="id_empleados" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_emp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="teléfono_emp" Type="Int32" />
+    <Property Name="dirección_emp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="correo_emp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_emp__31EC6D26" FromRole="Empleados" ToRole="Reservas" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="id_factura" />
+    </Key>
+    <Property Name="id_factura" Type="Int32" Nullable="false" />
+    <Property Name="id_reservas" Type="Int32" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK__Facturas__id_res__36B12243" FromRole="Facturas" ToRole="Reservas" />
+  </EntityType>
+  <EntityType Name="Metodos_Pago">
+    <Key>
+      <PropertyRef Name="id_metodos_pg" />
+    </Key>
+    <Property Name="id_metodos_pg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Metodos_Pago" ToRole="Reservas" />
+  </EntityType>
+  <EntityType Name="Reservas">
+    <Key>
+      <PropertyRef Name="id_reservas" />
+    </Key>
+    <Property Name="id_reservas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_empleados" Type="Int32" />
+    <Property Name="id_clientes" Type="Int32" />
+    <Property Name="id_metodos_pg" Type="Int32" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Reservas__id_cli__32E0915F" FromRole="Reservas" ToRole="Clientes" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK__Reservas__id_emp__31EC6D26" FromRole="Reservas" ToRole="Empleados" />
+    <NavigationProperty Name="Facturas" Relationship="Self.FK__Facturas__id_res__36B12243" FromRole="Reservas" ToRole="Facturas" />
+    <NavigationProperty Name="Metodos_Pago" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Reservas" ToRole="Metodos_Pago" />
+  </EntityType>
+  <EntityType Name="Servicios">
+    <Key>
+      <PropertyRef Name="id_servicios" />
+    </Key>
+    <Property Name="id_servicios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="precio_ser" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="descripción_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Administrador" Relationship="Self.FK__Administr__id_us__267ABA7A" FromRole="Usuarios" ToRole="Administrador" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Clientes__id_usu__29572725" FromRole="Usuarios" ToRole="Clientes" />
+  </EntityType>
+  <Association Name="FK__Administr__id_us__267ABA7A">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clientes__id_usu__29572725">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservas__id_cli__32E0915F">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_clientes" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_clientes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservas__id_emp__31EC6D26">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="id_empleados" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_empleados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Facturas__id_res__36B12243">
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
+    <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservas">
+        <PropertyRef Name="id_reservas" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="id_reservas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservas__id_met__33D4B598">
+    <End Role="Metodos_Pago" Type="Self.Metodos_Pago" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Metodos_Pago">
+        <PropertyRef Name="id_metodos_pg" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_metodos_pg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Spa_base_esterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+    <EntitySet Name="Facturas" EntityType="Self.Facturas" />
+    <EntitySet Name="Metodos_Pago" EntityType="Self.Metodos_Pago" />
+    <EntitySet Name="Reservas" EntityType="Self.Reservas" />
+    <EntitySet Name="Servicios" EntityType="Self.Servicios" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK__Administr__id_us__267ABA7A" Association="Self.FK__Administr__id_us__267ABA7A">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clientes__id_usu__29572725" Association="Self.FK__Clientes__id_usu__29572725">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_cli__32E0915F" Association="Self.FK__Reservas__id_cli__32E0915F">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_emp__31EC6D26" Association="Self.FK__Reservas__id_emp__31EC6D26">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facturas__id_res__36B12243" Association="Self.FK__Facturas__id_res__36B12243">
+      <End Role="Reservas" EntitySet="Reservas" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_met__33D4B598" Association="Self.FK__Reservas__id_met__33D4B598">
+      <End Role="Metodos_Pago" EntitySet="Metodos_Pago" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

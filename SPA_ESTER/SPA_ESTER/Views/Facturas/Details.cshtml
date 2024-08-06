@@ -1,0 +1,28 @@
+﻿@model ClassLibrary1.Facturas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Consultar Facturas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Reservas
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservas.id_reservas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.id_factura }, new { @class = "btn btn-primary btn-sm" }) |
+
+    <!-- Enlace "Regresar" estilizado como un botón secundario -->
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

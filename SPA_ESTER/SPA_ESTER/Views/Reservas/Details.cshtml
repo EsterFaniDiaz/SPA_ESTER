@@ -1,0 +1,45 @@
+﻿@model ClassLibrary1.Reservas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h4>Consultar Reservas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.nombre_cl)
+        </dd>
+
+        <dt>
+            Empleado Asignado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.nombre_emp)
+        </dd>
+
+        <dt>
+            ID Metodo de Pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metodos_Pago.id_metodos_pg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.id_reservas }, new { @class = "btn btn-primary btn-sm" }) |
+
+    <!-- Enlace "Regresar" estilizado como un botón secundario -->
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Spa_base_esterModelStoreContainer" CdmEntityContainer="Spa_base_esterEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+          <ScalarProperty Name="nombre_ad" ColumnName="nombre_ad" />
+          <ScalarProperty Name="teléfono_ad" ColumnName="teléfono_ad" />
+          <ScalarProperty Name="dirección_ad" ColumnName="dirección_ad" />
+          <ScalarProperty Name="correo_ad" ColumnName="correo_ad" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
+          <ScalarProperty Name="nombre_cl" ColumnName="nombre_cl" />
+          <ScalarProperty Name="teléfono_cl" ColumnName="teléfono_cl" />
+          <ScalarProperty Name="dirección_cl" ColumnName="dirección_cl" />
+          <ScalarProperty Name="correo_cl" ColumnName="correo_cl" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />
+          <ScalarProperty Name="nombre_emp" ColumnName="nombre_emp" />
+          <ScalarProperty Name="teléfono_emp" ColumnName="teléfono_emp" />
+          <ScalarProperty Name="dirección_emp" ColumnName="dirección_emp" />
+          <ScalarProperty Name="correo_emp" ColumnName="correo_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Facturas">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+          <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Metodos_Pago">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Metodos_Pago">
+        <MappingFragment StoreEntitySet="Metodos_Pago">
+          <ScalarProperty Name="id_metodos_pg" ColumnName="id_metodos_pg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservas">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Reservas">
+        <MappingFragment StoreEntitySet="Reservas">
+          <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
+          <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />
+          <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
+          <ScalarProperty Name="id_metodos_pg" ColumnName="id_metodos_pg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Servicios">
+        <MappingFragment StoreEntitySet="Servicios">
+          <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
+          <ScalarProperty Name="precio_ser" ColumnName="precio_ser" />
+          <ScalarProperty Name="descripción_ser" ColumnName="descripción_ser" />
+          <ScalarProperty Name="nombre_ser" ColumnName="nombre_ser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="Spa_base_esterModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

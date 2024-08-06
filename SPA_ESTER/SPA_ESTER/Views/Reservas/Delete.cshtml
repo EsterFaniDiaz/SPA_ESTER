@@ -1,0 +1,51 @@
+﻿@model ClassLibrary1.Reservas
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Eliminar Reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre del cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.nombre_cl)
+        </dd>
+
+        <dt>
+            Empleado asignado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.nombre_emp)
+        </dd>
+
+        <dt>
+            ID Metodo de Pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metodos_Pago.id_metodos_pg)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <!-- Botón de Crear con estilo de Bootstrap -->
+                <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+                <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+            </div>
+        </div>
+    }
+</div>

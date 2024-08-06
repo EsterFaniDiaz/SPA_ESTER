@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ClassLibrary1.Servicios>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Servicios</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Precio del servicio:
+        </th>
+        <th>
+            Descripción:
+        </th>
+        <th>
+            Nombre del Servicio:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_ser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripción_ser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_ser)
+        </td>
+        <td>
+
+            @Html.ActionLink("Actualizar", "Edit", new { id = item.id_servicios }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Consultar" estilizado como un botón -->
+            @Html.ActionLink("Consultar", "Details", new { id = item.id_servicios }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Eliminar" estilizado como un botón -->
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id_servicios }, new { @class = "btn btn-primary btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

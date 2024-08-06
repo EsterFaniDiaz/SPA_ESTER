@@ -1,0 +1,44 @@
+﻿@model ClassLibrary1.Servicios
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>Consultar Servicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Precio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_ser)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripción_ser)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_ser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Actualizar", "Edit", new { id = Model.id_servicios }, new { @class = "btn btn-primary btn-sm" }) |
+
+    <!-- Enlace "Regresar" estilizado como un botón secundario -->
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

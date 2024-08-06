@@ -1,0 +1,50 @@
+﻿@model ClassLibrary1.Usuarios
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Crear nuevo Usuarios</h4>
+        <hr />
+        <div class="row pt-3">
+            <div class="col-md-6 form-group">
+                @Html.LabelFor(model => model.usuario, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.usuario, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6 form-group">
+                @Html.LabelFor(model => model.contraseña, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.contraseña, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.contraseña, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row pt-3">
+
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <!-- Botón de Crear con estilo de Bootstrap -->
+                        <input type="submit" value="Crear" class="btn btn-primary" /> |
+                        <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

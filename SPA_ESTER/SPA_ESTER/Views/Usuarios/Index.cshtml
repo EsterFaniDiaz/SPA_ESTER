@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ClassLibrary1.Usuarios>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuarios</h2>
+
+<p>
+    @Html.ActionLink("Añadir Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Contraseña
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contraseña)
+        </td>
+        <td>
+           
+
+            @Html.ActionLink("Actualizar", "Edit", new { id = item.id_usuario }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Consultar" estilizado como un botón -->
+            @Html.ActionLink("Consultar", "Details", new { id = item.id_usuario }, new { @class = "btn btn-primary btn-sm" }) |
+
+            <!-- Enlace "Eliminar" estilizado como un botón -->
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id_usuario }, new { @class = "btn btn-primary btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

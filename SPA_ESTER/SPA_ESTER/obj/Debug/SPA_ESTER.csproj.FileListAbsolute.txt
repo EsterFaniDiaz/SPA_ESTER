@@ -1,0 +1,179 @@
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.dll.config
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.pdb
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.exe
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.exe.config
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.rsp
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.exe
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.exe.config
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.rsp
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.AppContext.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Console.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.Compression.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Net.Http.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Net.Sockets.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.ValueTuple.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.exe
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.exe.config
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.rsp
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\VBCSCompiler.exe
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Antlr3.Runtime.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Newtonsoft.Json.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Helpers.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Mvc.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Optimization.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Razor.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Razor.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\WebGrease.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Helpers.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Mvc.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Optimization.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Razor.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Razor.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Newtonsoft.Json.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Antlr3.Runtime.pdb
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Helpers.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Mvc.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Optimization.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Razor.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csprojAssemblyReference.cache
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csproj.CoreCompileInputs.cache
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csproj.CopyComplete
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.dll
+C:\Users\SENA\Desktop\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.pdb
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.dll.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\SPA_ESTER.pdb
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.exe
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.exe.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csc.rsp
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.exe
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.exe.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\csi.rsp
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.AppContext.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Console.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.Compression.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Net.Http.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Net.Sockets.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.ValueTuple.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XPath.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.exe
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.exe.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\vbc.rsp
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\VBCSCompiler.exe
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Antlr3.Runtime.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\ClassLibrary1.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\EntityFramework.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\EntityFramework.SqlServer.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Newtonsoft.Json.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Helpers.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Mvc.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Optimization.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Razor.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Razor.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\WebGrease.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\ClassLibrary1.pdb
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\ClassLibrary1.dll.config
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\EntityFramework.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\EntityFramework.SqlServer.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Helpers.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Mvc.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Optimization.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.Razor.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\System.Web.WebPages.Razor.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Newtonsoft.Json.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Antlr3.Runtime.pdb
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Helpers.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Mvc.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Optimization.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.Razor.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csproj.AssemblyReference.cache
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csproj.CoreCompileInputs.cache
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.csproj.CopyComplete
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.dll
+C:\Users\jhrui\Documents\Ester Fany\C#\SPA_PROYECT_ESTER\SPA_ESTER\SPA_ESTER\obj\Debug\SPA_ESTER.pdb

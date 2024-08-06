@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Spa_EsterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="id_ad" />
+    </Key>
+    <Property Name="id_ad" Type="int" Nullable="false" />
+    <Property Name="nombre_ad" Type="varchar" MaxLength="100" />
+    <Property Name="teléfono_ad" Type="int" />
+    <Property Name="dirección_ad" Type="varchar" MaxLength="100" />
+    <Property Name="correo_ad" Type="varchar" MaxLength="100" />
+    <Property Name="id_usuario" Type="int" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id_clientes" />
+    </Key>
+    <Property Name="id_clientes" Type="int" Nullable="false" />
+    <Property Name="nombre_cl" Type="varchar" MaxLength="100" />
+    <Property Name="teléfono_cl" Type="int" />
+    <Property Name="dirección_cl" Type="varchar" MaxLength="100" />
+    <Property Name="correo_cl" Type="varchar" MaxLength="100" />
+    <Property Name="id_usuario" Type="int" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="id_empleados" />
+    </Key>
+    <Property Name="id_empleados" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_emp" Type="varchar" MaxLength="100" />
+    <Property Name="teléfono_emp" Type="int" />
+    <Property Name="dirección_emp" Type="varchar" MaxLength="100" />
+    <Property Name="correo_emp" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="id_factura" />
+    </Key>
+    <Property Name="id_factura" Type="int" Nullable="false" />
+    <Property Name="id_reservas" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Facturas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Facturas_servicios">
+          <Property Name="id_factura" Type="int" />
+          <Property Name="id_servicios" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Metodos_Pago">
+    <Key>
+      <PropertyRef Name="id_metodos_pg" />
+    </Key>
+    <Property Name="id_metodos_pg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservas">
+    <Key>
+      <PropertyRef Name="id_reservas" />
+    </Key>
+    <Property Name="id_reservas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_empleados" Type="int" />
+    <Property Name="id_clientes" Type="int" />
+    <Property Name="id_metodos_pg" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Reservas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Reservas_servicios">
+          <Property Name="id_reservas" Type="int" />
+          <Property Name="id_servicios" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Servicios">
+    <Key>
+      <PropertyRef Name="id_servicios" />
+    </Key>
+    <Property Name="id_servicios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="precio_ser" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="descripción_ser" Type="varchar" MaxLength="100" />
+    <Property Name="nombre_ser" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Administr__id_us__267ABA7A">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clientes__id_usu__29572725">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
+        <Association Name="FK__Facturas___id_fa__38996AB5" />-->
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
+        <Association Name="FK__Facturas___id_se__398D8EEE" />-->
+  <Association Name="FK__Facturas__id_res__36B12243">
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
+    <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservas">
+        <PropertyRef Name="id_reservas" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="id_reservas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
+        <Association Name="FK__Reservas___id_re__3B75D760" />-->
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
+        <Association Name="FK__Reservas___id_se__3C69FB99" />-->
+  <Association Name="FK__Reservas__id_cli__32E0915F">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="id_clientes" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_clientes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservas__id_emp__31EC6D26">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="id_empleados" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_empleados" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservas__id_met__33D4B598">
+    <End Role="Metodos_Pago" Type="Self.Metodos_Pago" Multiplicity="0..1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Metodos_Pago">
+        <PropertyRef Name="id_metodos_pg" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="id_metodos_pg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Spa_EsterModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Metodos_Pago" EntityType="Self.Metodos_Pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservas" EntityType="Self.Reservas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicios" EntityType="Self.Servicios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Administr__id_us__267ABA7A" Association="Self.FK__Administr__id_us__267ABA7A">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clientes__id_usu__29572725" Association="Self.FK__Clientes__id_usu__29572725">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Facturas__id_res__36B12243" Association="Self.FK__Facturas__id_res__36B12243">
+      <End Role="Reservas" EntitySet="Reservas" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_cli__32E0915F" Association="Self.FK__Reservas__id_cli__32E0915F">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_emp__31EC6D26" Association="Self.FK__Reservas__id_emp__31EC6D26">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservas__id_met__33D4B598" Association="Self.FK__Reservas__id_met__33D4B598">
+      <End Role="Metodos_Pago" EntitySet="Metodos_Pago" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

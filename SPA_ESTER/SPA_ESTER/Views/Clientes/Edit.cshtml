@@ -1,0 +1,90 @@
+﻿@model ClassLibrary1.Clientes
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Actualizar Cliente</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_clientes)
+
+        <div class="row pt-3">
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.id_clientes, "Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.id_clientes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.id_clientes, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.nombre_cl, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.nombre_cl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombre_cl, "", new { @class = "text-danger" })
+
+
+            </div>
+
+        </div>
+
+        <div class="row pt-3">
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.teléfono_cl, "Teléfono", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.teléfono_cl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.teléfono_cl, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.dirección_cl, "Dirección", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.dirección_cl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dirección_cl, "", new { @class = "text-danger" })
+
+
+            </div>
+
+        </div>
+
+        <div class="row pt-3">
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.correo_cl, "Correo", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.correo_cl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.correo_cl, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6 form-group ">
+                @Html.LabelFor(model => model.id_usuario, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownList("id_usuario", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_usuario, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+
+        <div class="row pt-3">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <!-- Botón de Crear con estilo de Bootstrap -->
+                    <input type="submit" value="Actualizar" class="btn btn-primary" /> |
+                    <a href="@Url.Action("Index")" class="btn btn-primary">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

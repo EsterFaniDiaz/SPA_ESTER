@@ -1,0 +1,59 @@
+﻿@model ClassLibrary1.Administrador
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Administrador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teléfono_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teléfono_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dirección_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dirección_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarios.usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarios.usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_ad }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
