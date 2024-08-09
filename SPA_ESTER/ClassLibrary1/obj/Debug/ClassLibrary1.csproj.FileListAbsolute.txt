@@ -16,8 +16,8 @@ C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\bin\Debug\EntityFramework.
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\bin\Debug\EntityFramework.xml
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.AssemblyReference.cache
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CopyComplete
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.AssemblyReference.cache

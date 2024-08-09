@@ -1,31 +1,269 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<ClassLibrary1.Servicios>
+
+@{
+    ViewBag.Title = "Spa Ester";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: url('https://i.imgur.com/ReEmYJY.png') no-repeat center center; /* URL de la imagen de fondo */
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+            .hero-section h1 {
+                font-size: 4rem; /* Aqui se cambia el Tamaño de letra aumentado */
+                font-family: 'Arial', sans-serif; /* Fuente de letra */
+                font-weight: bold; /* Grosor de letra */
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .hero-section p {
+                font-size: 1.5rem; /* Aqui se cambia el Tamaño de letra aumentado */
+            }
+
+        .service-card {
+            text-align: center;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+            .service-card:hover {
+                transform: scale(1.05);
+            }
+
+            .service-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+            .btn-custom:hover {
+                background-color: #0056b3;
+            }
+
+
+        .navbar-nav {
+            flex-direction: row;
+        }
+
+        .nav-item {
+            margin-left: 15px;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 18px; /* Aqui se cambia el Tamaño de letra aumentado.*/
+        }
+
+
+
+            .nav-link:hover {
+                color: #ccc;
+            }
+
+        .card-title {
+            font-size: 1.5rem; /* Tamaño de letra aumentado aquí */
+        }
+
+        .card-text {
+            font-size: 1.2rem; /* Tamaño de letra aumentado aquí */
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="hero-section">
+        <h1>
+            Amarse es un ritual
+        </h1>
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <!-- Services Section -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Service 1 -->
+
+
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <img class="card-img-top" src="https://us.123rf.com/450wm/serezniy/serezniy1806/serezniy180615383/102759033-rel%C3%A1jese-en-la-mesa-con-fondo-de-madera.jpg?ver=6" alt="..." />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre_ser)</h5>
+                                <p class="card-text">@Html.DisplayFor(modelItem => item.descripción_ser)</p>
+                                <span class="text-muted text-decoration-line-through">@Html.DisplayFor(modelItem => item.precio_ser)</span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <img class="card-img-top" src="https://www.kinsale.ie/wp-content/uploads/2022/08/young-woman-having-face-massage-relaxing-spa-salon-scaled.jpeg" alt="..." />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="card-title">Facial Treatments</h5>
+                                <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <img class="card-img-top" src="https://img1.10bestmedia.com/Images/Photos/402859/GettyImages-1325095289_55_660x440.jpg" alt="..." />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="card-title">Facial Treatments</h5>
+                                <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                            </div>
+                        </div>
+
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="container my-5">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <img class="card-img-top" src="https://mejorconsalud.as.com/wp-content/uploads/2021/03/masajes-spa.jpg" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="card-title">Facial Treatments</h5>
+                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
+                            <span class="text-muted text-decoration-line-through">$50.00</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <img class="card-img-top" src="https://us.123rf.com/450wm/serezniy/serezniy1810/serezniy181017146/110290436-set-para-tratamiento-de-spa-con-coco-en-mesa-de-madera.jpg" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="card-title">Facial Treatments</h5>
+                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
+                            <span class="text-muted text-decoration-line-through">$50.00</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <img class="card-img-top" src="https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2023/10/12135106/hifi-representative-image-for-spa-new-africa-shutterstock.jpeg?tr=w-480,f-jpg,pr-true" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="card-title">Facial Treatments</h5>
+                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
+                            <span class="text-muted text-decoration-line-through">$50.00</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="#"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ClassLibrary1;
+using ClassLibrary1.ViewModels;
 
 namespace SPA_ESTER.Controllers
 {
@@ -48,17 +49,28 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nombre_cl,Numero_Documento,teléfono_cl,dirección_cl,correo_cl,id_usuario")] Clientes clientes)
+        public ActionResult Create([Bind(Include = "nombre_cl,Numero_Documento,teléfono_cl,dirección_cl,correo_cl,id_usuario")] ClientesViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+
+                var clientes = new Clientes
+                {
+                    nombre_cl = viewModel.nombre_cl,
+                    Numero_Documento = viewModel.Numero_Documento,
+                    teléfono_cl = viewModel.teléfono_cl,
+                    dirección_cl = viewModel.dirección_cl,
+                    correo_cl = viewModel.correo_cl,
+                    id_usuario = viewModel.id_usuario
+                };
+
                 db.Clientes.Add(clientes);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_usuario = new SelectList(db.Usuarios, "id_usuario", "usuario", clientes.id_usuario);
-            return View(clientes);
+            ViewBag.id_usuario = new SelectList(db.Usuarios, "id_usuario", "usuario", viewModel.id_usuario);
+            return View(viewModel);
         }
 
         // GET: Clientes/Edit/5

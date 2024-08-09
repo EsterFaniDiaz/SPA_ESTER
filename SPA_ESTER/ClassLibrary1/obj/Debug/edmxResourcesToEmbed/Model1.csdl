@@ -16,7 +16,7 @@
     <Key>
       <PropertyRef Name="id_clientes" />
     </Key>
-    <Property Name="id_clientes" Type="Int32" Nullable="false" />
+    <Property Name="id_clientes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombre_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="teléfono_cl" Type="Int32" />
     <Property Name="dirección_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -24,6 +24,7 @@
     <Property Name="id_usuario" Type="Int32" />
     <NavigationProperty Name="Usuarios" Relationship="Self.FK__Clientes__id_usu__29572725" FromRole="Clientes" ToRole="Usuarios" />
     <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_cli__32E0915F" FromRole="Clientes" ToRole="Reservas" />
+    <Property Name="Numero_Documento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Empleados">
     <Key>

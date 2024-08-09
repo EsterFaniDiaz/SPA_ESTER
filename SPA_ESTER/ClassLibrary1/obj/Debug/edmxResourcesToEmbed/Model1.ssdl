@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="id_ad" />
     </Key>
-    <Property Name="id_ad" Type="int" Nullable="false" />
+    <Property Name="id_ad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre_ad" Type="varchar" MaxLength="100" />
     <Property Name="teléfono_ad" Type="int" />
     <Property Name="dirección_ad" Type="varchar" MaxLength="100" />
@@ -15,12 +15,13 @@
     <Key>
       <PropertyRef Name="id_clientes" />
     </Key>
-    <Property Name="id_clientes" Type="int" Nullable="false" />
+    <Property Name="id_clientes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre_cl" Type="varchar" MaxLength="100" />
     <Property Name="teléfono_cl" Type="int" />
     <Property Name="dirección_cl" Type="varchar" MaxLength="100" />
     <Property Name="correo_cl" Type="varchar" MaxLength="100" />
     <Property Name="id_usuario" Type="int" />
+    <Property Name="Numero_Documento" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Empleados">
     <Key>
@@ -36,15 +37,9 @@
     <Key>
       <PropertyRef Name="id_factura" />
     </Key>
-    <Property Name="id_factura" Type="int" Nullable="false" />
+    <Property Name="id_factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_reservas" Type="int" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Facturas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="Facturas_servicios">
-          <Property Name="id_factura" Type="int" />
-          <Property Name="id_servicios" Type="int" />
-        </EntityType>-->
   <EntityType Name="Metodos_Pago">
     <Key>
       <PropertyRef Name="id_metodos_pg" />
@@ -60,12 +55,6 @@ advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Facturas_servicios' no tiene d
     <Property Name="id_clientes" Type="int" />
     <Property Name="id_metodos_pg" Type="int" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Reservas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="Reservas_servicios">
-          <Property Name="id_reservas" Type="int" />
-          <Property Name="id_servicios" Type="int" />
-        </EntityType>-->
   <EntityType Name="Servicios">
     <Key>
       <PropertyRef Name="id_servicios" />
@@ -107,12 +96,6 @@ advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Reservas_servicios' no tiene d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Facturas___id_fa__38996AB5" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Facturas___id_se__398D8EEE" />-->
   <Association Name="FK__Facturas__id_res__36B12243">
     <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
     <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
@@ -125,12 +108,6 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_ser
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Reservas___id_re__3B75D760" />-->
-  <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Reservas___id_se__3C69FB99" />-->
   <Association Name="FK__Reservas__id_cli__32E0915F">
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
     <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />

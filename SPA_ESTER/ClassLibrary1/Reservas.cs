@@ -11,8 +11,7 @@ namespace ClassLibrary1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Reservas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,18 +19,12 @@ namespace ClassLibrary1
         {
             this.Facturas = new HashSet<Facturas>();
         }
-       
+    
         public int id_reservas { get; set; }
-
-        
         public Nullable<int> id_empleados { get; set; }
-
-        
         public Nullable<int> id_clientes { get; set; }
-
-        
         public Nullable<int> id_metodos_pg { get; set; }
-        
+    
         public virtual Clientes Clientes { get; set; }
         public virtual Empleados Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

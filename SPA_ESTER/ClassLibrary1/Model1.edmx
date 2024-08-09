@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Spa_EsterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Spa_EsterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrador">
           <Key>
             <PropertyRef Name="id_ad" />
           </Key>
-          <Property Name="id_ad" Type="int" Nullable="false" />
+          <Property Name="id_ad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_ad" Type="varchar" MaxLength="100" />
           <Property Name="teléfono_ad" Type="int" />
           <Property Name="dirección_ad" Type="varchar" MaxLength="100" />
@@ -20,12 +20,13 @@
           <Key>
             <PropertyRef Name="id_clientes" />
           </Key>
-          <Property Name="id_clientes" Type="int" Nullable="false" />
+          <Property Name="id_clientes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_cl" Type="varchar" MaxLength="100" />
           <Property Name="teléfono_cl" Type="int" />
           <Property Name="dirección_cl" Type="varchar" MaxLength="100" />
           <Property Name="correo_cl" Type="varchar" MaxLength="100" />
           <Property Name="id_usuario" Type="int" />
+          <Property Name="Numero_Documento" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Empleados">
           <Key>
@@ -41,15 +42,9 @@
           <Key>
             <PropertyRef Name="id_factura" />
           </Key>
-          <Property Name="id_factura" Type="int" Nullable="false" />
+          <Property Name="id_factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_reservas" Type="int" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Facturas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="Facturas_servicios">
-          <Property Name="id_factura" Type="int" />
-          <Property Name="id_servicios" Type="int" />
-        </EntityType>-->
         <EntityType Name="Metodos_Pago">
           <Key>
             <PropertyRef Name="id_metodos_pg" />
@@ -65,12 +60,6 @@ advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Facturas_servicios' no tiene d
           <Property Name="id_clientes" Type="int" />
           <Property Name="id_metodos_pg" Type="int" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Reservas_servicios' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="Reservas_servicios">
-          <Property Name="id_reservas" Type="int" />
-          <Property Name="id_servicios" Type="int" />
-        </EntityType>-->
         <EntityType Name="Servicios">
           <Key>
             <PropertyRef Name="id_servicios" />
@@ -112,12 +101,6 @@ advertencia 6013: La tabla o vista 'Spa_Ester.dbo.Reservas_servicios' no tiene d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Facturas___id_fa__38996AB5" />-->
-        <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Facturas___id_se__398D8EEE" />-->
         <Association Name="FK__Facturas__id_res__36B12243">
           <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
           <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
@@ -130,12 +113,6 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Facturas_ser
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Reservas___id_re__3B75D760" />-->
-        <!--Errores durante la generación:
-error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_servicios', pero no se encuentra la tabla.
-        <Association Name="FK__Reservas___id_se__3C69FB99" />-->
         <Association Name="FK__Reservas__id_cli__32E0915F">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
           <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
@@ -206,8 +183,7 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_ser
             <End Role="Reservas" EntitySet="Reservas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Spa_EsterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -227,7 +203,7 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_ser
           <Key>
             <PropertyRef Name="id_clientes" />
           </Key>
-          <Property Name="id_clientes" Type="Int32" Nullable="false" />
+          <Property Name="id_clientes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="teléfono_cl" Type="Int32" />
           <Property Name="dirección_cl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -235,6 +211,7 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_ser
           <Property Name="id_usuario" Type="Int32" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Clientes__id_usu__29572725" FromRole="Clientes" ToRole="Usuarios" />
           <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_cli__32E0915F" FromRole="Clientes" ToRole="Reservas" />
+          <Property Name="Numero_Documento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Empleados">
           <Key>
@@ -421,6 +398,7 @@ error 6004: Una relación hace referencia a la tabla 'Spa_Ester.dbo.Reservas_ser
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="Spa_EsterModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
                 <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
                 <ScalarProperty Name="nombre_cl" ColumnName="nombre_cl" />
                 <ScalarProperty Name="teléfono_cl" ColumnName="teléfono_cl" />

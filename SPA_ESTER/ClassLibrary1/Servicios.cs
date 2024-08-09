@@ -11,23 +11,12 @@ namespace ClassLibrary1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Servicios
     {
-      
         public int id_servicios { get; set; }
-
-        [Required(ErrorMessage = "El precio es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El precio no puede exceder los 100 caracteres.")]
         public Nullable<decimal> precio_ser { get; set; }
-
-        [Required(ErrorMessage = "La descripción es obligatoria.")]
-        [StringLength(100, ErrorMessage = "La descripción no puede exceder los 100 caracteres.")]
         public string descripción_ser { get; set; }
-
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
         public string nombre_ser { get; set; }
     }
 }

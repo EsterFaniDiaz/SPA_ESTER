@@ -11,11 +11,9 @@ namespace ClassLibrary1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Facturas
     {
-       
         public int id_factura { get; set; }
         public Nullable<int> id_reservas { get; set; }
     

@@ -11,8 +11,7 @@ namespace ClassLibrary1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Empleados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,24 +19,11 @@ namespace ClassLibrary1
         {
             this.Reservas = new HashSet<Reservas>();
         }
-
-       
+    
         public int id_empleados { get; set; }
-
-        [Required(ErrorMessage = "El nombre es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
         public string nombre_emp { get; set; }
-
-        [Required(ErrorMessage = "El teléfono es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El teléfono no puede exceder los 100 caracteres.")]
         public Nullable<int> teléfono_emp { get; set; }
-
-        [Required(ErrorMessage = "La dirección es obligatoria.")]
-        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
         public string dirección_emp { get; set; }
-
-        [Required(ErrorMessage = "El correo es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El correo no puede exceder los 100 caracteres.")]
         public string correo_emp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

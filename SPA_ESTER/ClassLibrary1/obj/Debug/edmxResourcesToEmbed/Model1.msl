@@ -16,6 +16,7 @@
     <EntitySetMapping Name="Clientes">
       <EntityTypeMapping TypeName="Spa_EsterModel.Clientes">
         <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
           <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
           <ScalarProperty Name="nombre_cl" ColumnName="nombre_cl" />
           <ScalarProperty Name="teléfono_cl" ColumnName="teléfono_cl" />
