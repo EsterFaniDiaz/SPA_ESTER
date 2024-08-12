@@ -39,7 +39,7 @@ namespace SPA_CLIENTE.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_clientes,id_metodos_pg,FechaHora")] ReservasViewModel reservas)
+        public ActionResult Create([Bind(Include = "id_clientes,id_metodos_pg,FechaHora,id_servicios")] ReservasViewModel reservas)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +86,7 @@ namespace SPA_CLIENTE.Controllers
             ReservasViewModel reservasViewModel = new ReservasViewModel();
 
             reservasViewModel.Servicios = new List<Servicios> { Servicio };
+            reservasViewModel.id_servicios = Servicio.id_servicios;
 
 
             ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl");
