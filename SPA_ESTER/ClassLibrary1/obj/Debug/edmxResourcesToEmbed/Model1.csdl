@@ -79,6 +79,7 @@
     <Property Name="nombre_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Facturas_servicios" Relationship="Spa_EsterModel.FK__Facturas___id_se__3A81B327" FromRole="Servicios" ToRole="Facturas_servicios" />
     <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_se__3E52440B" FromRole="Servicios" ToRole="Reservas_servicios" />
+    <Property Name="imagen_servicio" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>

@@ -51,6 +51,9 @@ C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\roslyn\vbc.rsp
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\roslyn\VBCSCompiler.exe
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\roslyn\VBCSCompiler.exe.config
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\Antlr3.Runtime.dll
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.dll
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.dll
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.SqlServer.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\Microsoft.Web.Infrastructure.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\Newtonsoft.Json.dll
@@ -62,6 +65,10 @@ C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.WebPages.Depl
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.WebPages.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.WebPages.Razor.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\WebGrease.dll
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.pdb
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.dll.config
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.xml
+C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.SqlServer.xml
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.Helpers.xml
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.Mvc.xml
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\System.Web.Optimization.xml
@@ -84,10 +91,3 @@ C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\obj\Debug\SPA_CLIENTE.csproj
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\obj\Debug\SPA_CLIENTE.csproj.CopyComplete
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\obj\Debug\SPA_CLIENTE.dll
 C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\obj\Debug\SPA_CLIENTE.pdb
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.dll
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.dll
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.SqlServer.dll
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.pdb
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\ClassLibrary1.dll.config
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.xml
-C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_CLIENTE\bin\EntityFramework.SqlServer.xml

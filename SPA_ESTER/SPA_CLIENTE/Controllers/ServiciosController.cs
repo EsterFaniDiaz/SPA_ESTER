@@ -20,6 +20,21 @@ namespace SPA_CLIENTE.Controllers
             return View(db.Servicios.ToList());
         }
 
+
+
+        public ActionResult GetImage(int id)
+        {
+            var servicio = db.Servicios.Find(id);
+            if (servicio != null && servicio.imagen_servicio != null)
+            {
+                return File(servicio.imagen_servicio, "image/jpeg"); // Ajusta el tipo de contenido según tu imagen
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
         // GET: Servicios/Details/5
         public ActionResult Details(int? id)
         {

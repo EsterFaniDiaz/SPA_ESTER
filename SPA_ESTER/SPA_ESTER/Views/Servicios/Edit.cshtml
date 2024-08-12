@@ -6,16 +6,27 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Servicios", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
-    <h4>Actualización Servicios</h4>
+    <h4 class="pt-3">Actualización Servicios</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.id_servicios)
 
+    <div class="row pt-3" style="text-align: center; align-content:center;">
+        <div class="form-group">
+            <img id="ImagenServicio" class="card-img-top mb-5 mb-md-0" src="@Url.Action("GetImage", "Servicios", new { id = Model.id_servicios })" alt="Imagen del Servicio" style="max-width: 500px;max-height: 800px;" />
+
+        </div>
+
+        <div class="row pt-3" style="text-align: center; align-content:center;">
+            <div class="col-4"></div>
+            <input class="col-4 btn btn-secondary" type="file" name="imageFile" id="imageFileInput" />
+        </div>
+    </div>
 
     <div class="row pt-3">
 
@@ -24,23 +35,24 @@
             @Html.EditorFor(model => model.nombre_ser, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.nombre_ser, "", new { @class = "text-danger" })
         </div>
-
         <div class="col-md-6 form-group ">
-            @Html.LabelFor(model => model.descripción_ser, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.descripción_ser, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.descripción_ser, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.precio_ser, "Precio", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.precio_ser, new { htmlAttributes = new { @class = "form-control textArea" } })
+            @Html.ValidationMessageFor(model => model.precio_ser, "", new { @class = "text-danger" })
         </div>
 
     </div>
 
 
     <div class="row pt-3">
-        <div class="col-md-6 form-group ">
-            @Html.LabelFor(model => model.precio_ser, "Precio", htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.precio_ser, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.precio_ser, "", new { @class = "text-danger" })
+
+        <div class="col-12 form-group ">
+            @Html.LabelFor(model => model.descripción_ser, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextAreaFor(model => model.descripción_ser, new { @class = "form-control", @row = "3" })
+            @Html.ValidationMessageFor(model => model.descripción_ser, "", new { @class = "text-danger" })
         </div>
     </div>
+     
 
     <div class="row pt-3">
         <div class="col-md-6 form-group ">
@@ -53,7 +65,21 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        document.getElementById('imageFileInput').addEventListener('change', function (event) {
+            var input = event.target;
+            var reader = new FileReader();
+
+            reader.onload = function () {
+                var dataURL = reader.result;
+                var output = document.getElementById('ImagenServicio');
+                output.src = dataURL;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        });
+
+    </script>
 </div>
 }
 

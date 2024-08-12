@@ -67,6 +67,7 @@
     <EntitySetMapping Name="Servicios">
       <EntityTypeMapping TypeName="Spa_EsterModel.Servicios">
         <MappingFragment StoreEntitySet="Servicios">
+          <ScalarProperty Name="imagen_servicio" ColumnName="imagen_servicio" />
           <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
           <ScalarProperty Name="precio_ser" ColumnName="precio_ser" />
           <ScalarProperty Name="descripción_ser" ColumnName="descripción_ser" />

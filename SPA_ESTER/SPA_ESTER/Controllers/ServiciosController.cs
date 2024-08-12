@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,16 +47,39 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_servicios,precio_ser,descripción_ser,nombre_ser")] Servicios servicios)
+        public ActionResult Create(
+                                    [Bind(Include = "id_servicios,precio_ser,descripción_ser,nombre_ser,imagen_servicio")] Servicios servicios,
+                                    HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    using (var binaryReader = new BinaryReader(imageFile.InputStream))
+                    {
+                        servicios.imagen_servicio = binaryReader.ReadBytes(imageFile.ContentLength);
+                    }
+                }
+
                 db.Servicios.Add(servicios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(servicios);
+        }
+
+        public ActionResult GetImage(int id)
+        {
+            var servicio = db.Servicios.Find(id);
+            if (servicio != null && servicio.imagen_servicio != null)
+            {
+                return File(servicio.imagen_servicio, "image/jpeg"); // Ajusta el tipo de contenido según tu imagen
+            }
+            else
+            {
+                return HttpNotFound();
+            }
         }
 
         // GET: Servicios/Edit/5
@@ -78,11 +102,35 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_servicios,precio_ser,descripción_ser,nombre_ser")] Servicios servicios)
+        public ActionResult Edit([Bind(Include = "id_servicios,precio_ser,descripción_ser,nombre_ser")] Servicios servicios, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(servicios).State = EntityState.Modified;
+
+                Servicios servicioAnterior = db.Servicios.Find(servicios.id_servicios);
+
+                if (servicioAnterior == null)
+                {
+                    // Manejar el caso cuando el servicio no se encuentra
+                    ModelState.AddModelError("", "El servicio no existe.");
+                    return View(servicios);
+                }
+
+
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    using (var binaryReader = new BinaryReader(imageFile.InputStream))
+                    {
+                        servicioAnterior.imagen_servicio = binaryReader.ReadBytes(imageFile.ContentLength);
+                    }
+                }
+                // Actualizar los campos del servicio anterior
+                servicioAnterior.precio_ser = servicios.precio_ser;
+                servicioAnterior.descripción_ser = servicios.descripción_ser;
+                servicioAnterior.nombre_ser = servicios.nombre_ser; 
+
+                db.Entry(servicioAnterior).State = EntityState.Modified;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

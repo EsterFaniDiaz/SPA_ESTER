@@ -25,6 +25,7 @@ namespace ClassLibrary1
         public Nullable<decimal> precio_ser { get; set; }
         public string descripción_ser { get; set; }
         public string nombre_ser { get; set; }
+        public byte[] imagen_servicio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facturas_servicios> Facturas_servicios { get; set; }

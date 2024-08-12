@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Content/Reserva.css" rel="stylesheet" type="text/css" />
+
 <h2>Create</h2>
 
 
@@ -12,66 +14,88 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Reservas</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.id_empleados, "id_empleados", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("id_empleados", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.id_empleados, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <h4>Reservas</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_clientes, "id_clientes", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_clientes", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_clientes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_metodos_pg, "id_metodos_pg", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_metodos_pg", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_metodos_pg, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.FechaHora,
+                                        new
+                                             {
+                                            @class = "form-control",
+                                            type = "datetime-local",
+                                            min = "2023-01-01",
+                                            max = "2024-12-31",
+                                            id = "fechaServicio"
+                                        })
+                @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Servicio")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Servicios[0].nombre_ser, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Servicios[0].nombre_ser, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <!-- Product section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="@Url.Action("GetImage", "Servicios", new { id = Model.id_servicios })" alt="..." /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">SKU: BST-498</div>
+                        <h1 class="display-5 fw-bolder">Shop item template</h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through">$45.00</span>
+                            <span>$40.00</span>
+                        </div>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @Html.HiddenFor(model => model.id_clientes, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.id_servicios, new { htmlAttributes = new { @class = "form-control" } })
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.id_clientes, "id_clientes", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("id_clientes", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.id_clientes, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.id_metodos_pg, "id_metodos_pg", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("id_metodos_pg", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.id_metodos_pg, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FechaHora, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(model => model.FechaHora,
-                                    new
-                                         {
-                                        @class = "form-control",
-                                        type = "datetime-local",
-                                        min = "2023-01-01",
-                                        max = "2024-12-31",
-                                        id = "fechaServicio"
-                                    })
-            @Html.ValidationMessageFor(model => model.FechaHora, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.Label("Servicio")
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Servicios[0].nombre_ser, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Servicios[0].nombre_ser, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    @Html.HiddenFor(model => model.id_servicios, new { htmlAttributes = new { @class = "form-control" } })
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
 
 <div>
@@ -81,3 +105,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<link href="C:\Repository\Ester\SPA_ESTER\SPA_ESTER\SPA_ESTER\Content\all.css" rel="stylesheet" />

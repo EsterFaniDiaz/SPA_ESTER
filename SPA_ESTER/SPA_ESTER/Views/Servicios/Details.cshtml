@@ -33,6 +33,19 @@
             @Html.DisplayFor(model => model.nombre_ser)
         </dd>
 
+        <dt>
+            Imagen
+        </dt>
+
+        <dd>
+            <div class="form-group">
+                <label>Imagen del Servicio:</label>
+                <img src="@Url.Action("GetImage", "Servicios", new { id = Model.id_servicios })" alt="Imagen del Servicio" />
+            </div>
+        </dd>
+
+
+
     </dl>
 </div>
 <p>

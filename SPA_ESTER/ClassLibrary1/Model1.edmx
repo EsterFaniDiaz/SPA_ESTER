@@ -86,6 +86,7 @@
           <Property Name="precio_ser" Type="decimal" Precision="18" Scale="0" />
           <Property Name="descripción_ser" Type="varchar" MaxLength="100" />
           <Property Name="nombre_ser" Type="varchar" MaxLength="100" />
+          <Property Name="imagen_servicio" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -350,6 +351,7 @@
           <Property Name="nombre_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Facturas_servicios" Relationship="Spa_EsterModel.FK__Facturas___id_se__3A81B327" FromRole="Servicios" ToRole="Facturas_servicios" />
           <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_se__3E52440B" FromRole="Servicios" ToRole="Reservas_servicios" />
+          <Property Name="imagen_servicio" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -625,6 +627,7 @@
           <EntitySetMapping Name="Servicios">
             <EntityTypeMapping TypeName="Spa_EsterModel.Servicios">
               <MappingFragment StoreEntitySet="Servicios">
+                <ScalarProperty Name="imagen_servicio" ColumnName="imagen_servicio" />
                 <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
                 <ScalarProperty Name="precio_ser" ColumnName="precio_ser" />
                 <ScalarProperty Name="descripción_ser" ColumnName="descripción_ser" />

@@ -13,13 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            Precio del servicio:
+            Nombre del Servicio
         </th>
         <th>
-            Descripción:
+            Precio del servicio
         </th>
         <th>
-            Nombre del Servicio:
+            Descripción
         </th>
         <th></th>
     </tr>
@@ -27,13 +27,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.nombre_ser)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.precio_ser)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.descripción_ser)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_ser)
         </td>
         <td>
 

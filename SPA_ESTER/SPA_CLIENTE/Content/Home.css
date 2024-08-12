@@ -1,0 +1,73 @@
+﻿.hero-section {
+    background: url('https://i.imgur.com/ReEmYJY.png') no-repeat center center; /* URL de la imagen de fondo */
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+    .hero-section h1 {
+        font-size: 4rem; /* Aqui se cambia el Tamaño de letra aumentado */
+        font-family: 'Arial', sans-serif; /* Fuente de letra */
+        font-weight: bold; /* Grosor de letra */
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+        font-size: 1.5rem; /* Aqui se cambia el Tamaño de letra aumentado */
+    }
+
+.service-card {
+    text-align: center;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+
+    .service-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+.btn-custom {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+    .btn-custom:hover {
+        background-color: #0056b3;
+    }
+
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item {
+    margin-left: 15px;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 18px; /* Aqui se cambia el Tamaño de letra aumentado.*/
+}
+
+
+
+    .nav-link:hover {
+        color: #ccc;
+    }
+
+.card-title {
+    font-size: 1.5rem; /* Tamaño de letra aumentado aquí */
+}
+
+.card-text {
+    font-size: 1.2rem; /* Tamaño de letra aumentado aquí */
+}

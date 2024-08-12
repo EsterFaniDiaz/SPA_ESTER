@@ -41,93 +41,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background: url('https://i.imgur.com/ReEmYJY.png') no-repeat center center; /* URL de la imagen de fondo */
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
-        }
-
-            .hero-section h1 {
-                font-size: 4rem; /* Aqui se cambia el Tamaño de letra aumentado */
-                font-family: 'Arial', sans-serif; /* Fuente de letra */
-                font-weight: bold; /* Grosor de letra */
-                margin-bottom: 20px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
-
-            .hero-section p {
-                font-size: 1.5rem; /* Aqui se cambia el Tamaño de letra aumentado */
-            }
-
-        .service-card {
-            text-align: center;
-            border: none;
-            transition: transform 0.3s ease;
-        }
-
-            .service-card:hover {
-                transform: scale(1.05);
-            }
-
-            .service-card img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-        }
-
-            .btn-custom:hover {
-                background-color: #0056b3;
-            }
-
-
-        .navbar-nav {
-            flex-direction: row;
-        }
-
-        .nav-item {
-            margin-left: 15px;
-        }
-
-        .nav-link {
-            color: #fff;
-            font-size: 18px; /* Aqui se cambia el Tamaño de letra aumentado.*/
-        }
-
-
-
-            .nav-link:hover {
-                color: #ccc;
-            }
-
-        .card-title {
-            font-size: 1.5rem; /* Tamaño de letra aumentado aquí */
-        }
-
-        .card-text {
-            font-size: 1.2rem; /* Tamaño de letra aumentado aquí */
-        }
-    </style>
+     
+    <link href="~/Content/Home.css" rel="stylesheet" />
 </head>
 <body>
 
 
-    <div class="hero-section">
-        <h1>
-            Amarse es un ritual
-        </h1>
 
-
-    </div>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Amarse es un ritual</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Spa Ester el ritual que tu cuerpo necesita</p>
+            </div>
+        </div>
+    </header>
 
     <!-- Services Section -->
     <div class="container my-5">
@@ -141,7 +70,10 @@
                 <div class="col-md-4">
                     <div class="card service-card">
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                        <img class="card-img-top" src="https://us.123rf.com/450wm/serezniy/serezniy1806/serezniy180615383/102759033-rel%C3%A1jese-en-la-mesa-con-fondo-de-madera.jpg?ver=6" alt="..." />
+                        @*<img class="card-img-top" src="https://us.123rf.com/450wm/serezniy/serezniy1806/serezniy180615383/102759033-rel%C3%A1jese-en-la-mesa-con-fondo-de-madera.jpg?ver=6" alt="..." />*@
+
+                        <img class="card-img-top" src="@Url.Action("GetImage", "Servicios", new { id = item.id_servicios })" alt="..." />
+
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre_ser)</h5>
@@ -151,113 +83,17 @@
                         </div>
 
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <ul><li class="text-center">@Html.ActionLink("Add to cart", "Reserva", new { id_servicios = item.id_servicios })</li></ul> 
+                            <div class="text-center">@Html.ActionLink("Add to cart", "Reserva", new { id_servicios = item.id_servicios }, new { @class = "btn btn-outline-dark mt-auto"})</div>
                         </div>
+
                     </div>
                 </div>
             }
 
-
-
-                <div class="col-md-4">
-                    <div class="card service-card">
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                        <img class="card-img-top" src="https://www.kinsale.ie/wp-content/uploads/2022/08/young-woman-having-face-massage-relaxing-spa-salon-scaled.jpeg" alt="..." />
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="card-title">Facial Treatments</h5>
-                                <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                            </div>
-                        </div>
-
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4">
-                    <div class="card service-card">
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                        <img class="card-img-top" src="https://img1.10bestmedia.com/Images/Photos/402859/GettyImages-1325095289_55_660x440.jpg" alt="..." />
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="card-title">Facial Treatments</h5>
-                                <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                            </div>
-                        </div>
-
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-
-    <div class="container my-5">
-        <div class="row">
-
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                    <img class="card-img-top" src="https://mejorconsalud.as.com/wp-content/uploads/2021/03/masajes-spa.jpg" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="card-title">Facial Treatments</h5>
-                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
-                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                        </div>
-                    </div>
-
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                    <img class="card-img-top" src="https://us.123rf.com/450wm/serezniy/serezniy1810/serezniy181017146/110290436-set-para-tratamiento-de-spa-con-coco-en-mesa-de-madera.jpg" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="card-title">Facial Treatments</h5>
-                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
-                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                        </div>
-                    </div>
-
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                    <img class="card-img-top" src="https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2023/10/12135106/hifi-representative-image-for-spa-new-africa-shutterstock.jpeg?tr=w-480,f-jpg,pr-true" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="card-title">Facial Treatments</h5>
-                            <p class="card-text">Pamper your skin with our range of facial treatments designed for a radiant glow.</p>
-                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                        </div>
-                    </div>
-
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
+             
         </div>
     </div>
+ 
 
 
 
