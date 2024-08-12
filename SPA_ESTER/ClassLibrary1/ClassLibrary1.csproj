@@ -62,6 +62,9 @@
     <Compile Include="Facturas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facturas_servicios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Metodos_Pago.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -84,6 +87,9 @@
     <Compile Include="Reservas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reservas_servicios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Servicios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -91,6 +97,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ClientesViewModel.cs" />
+    <Compile Include="ViewModels\ReservasViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model1.edmx">

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ClassLibrary1.Reservas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.nombre_cl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.nombre_emp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metodos_Pago.id_metodos_pg)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.nombre_cl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.nombre_emp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metodos_Pago.id_metodos_pg)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_reservas }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_reservas }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_reservas })
+        </td>
+    </tr>
+}
+
+</table>

@@ -33,5 +33,7 @@ namespace ClassLibrary1
         public virtual DbSet<Reservas> Reservas { get; set; }
         public virtual DbSet<Servicios> Servicios { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Facturas_servicios> Facturas_servicios { get; set; }
+        public virtual DbSet<Reservas_servicios> Reservas_servicios { get; set; }
     }
 }

@@ -298,11 +298,6 @@
     <Content Include="Views\Facturas\Details.cshtml" />
     <Content Include="Views\Facturas\Edit.cshtml" />
     <Content Include="Views\Facturas\Index.cshtml" />
-    <Content Include="Views\Metodos_Pago1\Create.cshtml" />
-    <Content Include="Views\Metodos_Pago1\Delete.cshtml" />
-    <Content Include="Views\Metodos_Pago1\Details.cshtml" />
-    <Content Include="Views\Metodos_Pago1\Edit.cshtml" />
-    <Content Include="Views\Metodos_Pago1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

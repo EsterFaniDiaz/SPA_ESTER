@@ -12,19 +12,13 @@ namespace ClassLibrary1
     using System;
     using System.Collections.Generic;
     
-    public partial class Facturas
+    public partial class Reservas_servicios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Facturas()
-        {
-            this.Facturas_servicios = new HashSet<Facturas_servicios>();
-        }
-    
-        public int id_factura { get; set; }
+        public int Id_reservas_servicios { get; set; }
         public Nullable<int> id_reservas { get; set; }
+        public Nullable<int> id_servicios { get; set; }
     
         public virtual Reservas Reservas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Facturas_servicios> Facturas_servicios { get; set; }
+        public virtual Servicios Servicios { get; set; }
     }
 }

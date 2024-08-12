@@ -1,0 +1,43 @@
+﻿@model ClassLibrary1.Reservas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.nombre_cl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.nombre_cl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleados.nombre_emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.nombre_emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metodos_Pago.id_metodos_pg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metodos_Pago.id_metodos_pg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_reservas }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

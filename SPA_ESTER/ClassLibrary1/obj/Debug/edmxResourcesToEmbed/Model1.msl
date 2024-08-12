@@ -48,6 +48,7 @@
     <EntitySetMapping Name="Metodos_Pago">
       <EntityTypeMapping TypeName="Spa_EsterModel.Metodos_Pago">
         <MappingFragment StoreEntitySet="Metodos_Pago">
+          <ScalarProperty Name="nombre_metodo" ColumnName="nombre_metodo" />
           <ScalarProperty Name="id_metodos_pg" ColumnName="id_metodos_pg" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -55,6 +56,7 @@
     <EntitySetMapping Name="Reservas">
       <EntityTypeMapping TypeName="Spa_EsterModel.Reservas">
         <MappingFragment StoreEntitySet="Reservas">
+          <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
           <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
           <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />
           <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
@@ -78,6 +80,24 @@
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas_servicios">
+      <EntityTypeMapping TypeName="Spa_EsterModel.Facturas_servicios">
+        <MappingFragment StoreEntitySet="Facturas_servicios">
+          <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
+          <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+          <ScalarProperty Name="Id_facturas_servicios" ColumnName="Id_facturas_servicios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservas_servicios">
+      <EntityTypeMapping TypeName="Spa_EsterModel.Reservas_servicios">
+        <MappingFragment StoreEntitySet="Reservas_servicios">
+          <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
+          <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
+          <ScalarProperty Name="Id_reservas_servicios" ColumnName="Id_reservas_servicios" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

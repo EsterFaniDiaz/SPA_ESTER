@@ -19,6 +19,12 @@
         <AssociationConnector Association="Spa_EsterModel.FK__Reservas__id_emp__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="Spa_EsterModel.FK__Facturas__id_res__36B12243" ManuallyRouted="false" />
         <AssociationConnector Association="Spa_EsterModel.FK__Reservas__id_met__33D4B598" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Facturas_servicios" Width="1.5" PointX="9.75" PointY="2.625" />
+        <EntityTypeShape EntityType="Spa_EsterModel.Reservas_servicios" Width="1.5" PointX="10" PointY="6" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Facturas___id_fa__398D8EEE" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Facturas___id_se__3A81B327" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2" />
+        <AssociationConnector Association="Spa_EsterModel.FK__Reservas___id_se__3E52440B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

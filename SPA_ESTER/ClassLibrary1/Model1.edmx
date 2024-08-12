@@ -45,11 +45,20 @@
           <Property Name="id_factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_reservas" Type="int" />
         </EntityType>
+        <EntityType Name="Facturas_servicios">
+          <Key>
+            <PropertyRef Name="Id_facturas_servicios" />
+          </Key>
+          <Property Name="Id_facturas_servicios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_factura" Type="int" />
+          <Property Name="id_servicios" Type="int" />
+        </EntityType>
         <EntityType Name="Metodos_Pago">
           <Key>
             <PropertyRef Name="id_metodos_pg" />
           </Key>
           <Property Name="id_metodos_pg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_metodo" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Reservas">
           <Key>
@@ -59,6 +68,15 @@
           <Property Name="id_empleados" Type="int" />
           <Property Name="id_clientes" Type="int" />
           <Property Name="id_metodos_pg" Type="int" />
+          <Property Name="fecha_reserva" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Reservas_servicios">
+          <Key>
+            <PropertyRef Name="Id_reservas_servicios" />
+          </Key>
+          <Property Name="Id_reservas_servicios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_reservas" Type="int" />
+          <Property Name="id_servicios" Type="int" />
         </EntityType>
         <EntityType Name="Servicios">
           <Key>
@@ -101,6 +119,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Facturas___id_fa__398D8EEE">
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="0..1" />
+          <End Role="Facturas_servicios" Type="Self.Facturas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id_factura" />
+            </Principal>
+            <Dependent Role="Facturas_servicios">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facturas___id_se__3A81B327">
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="0..1" />
+          <End Role="Facturas_servicios" Type="Self.Facturas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="id_servicios" />
+            </Principal>
+            <Dependent Role="Facturas_servicios">
+              <PropertyRef Name="id_servicios" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Facturas__id_res__36B12243">
           <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
           <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
@@ -110,6 +152,30 @@
             </Principal>
             <Dependent Role="Facturas">
               <PropertyRef Name="id_reservas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservas___id_re__3D5E1FD2">
+          <End Role="Reservas" Type="Self.Reservas" Multiplicity="0..1" />
+          <End Role="Reservas_servicios" Type="Self.Reservas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservas">
+              <PropertyRef Name="id_reservas" />
+            </Principal>
+            <Dependent Role="Reservas_servicios">
+              <PropertyRef Name="id_reservas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservas___id_se__3E52440B">
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="0..1" />
+          <End Role="Reservas_servicios" Type="Self.Reservas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="id_servicios" />
+            </Principal>
+            <Dependent Role="Reservas_servicios">
+              <PropertyRef Name="id_servicios" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -154,8 +220,10 @@
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas_servicios" EntityType="Self.Facturas_servicios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Metodos_Pago" EntityType="Self.Metodos_Pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservas" EntityType="Self.Reservas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservas_servicios" EntityType="Self.Reservas_servicios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servicios" EntityType="Self.Servicios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Administr__id_us__267ABA7A" Association="Self.FK__Administr__id_us__267ABA7A">
@@ -166,9 +234,25 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
+          <AssociationSet Name="FK__Facturas___id_fa__398D8EEE" Association="Self.FK__Facturas___id_fa__398D8EEE">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Facturas_servicios" EntitySet="Facturas_servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facturas___id_se__3A81B327" Association="Self.FK__Facturas___id_se__3A81B327">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Facturas_servicios" EntitySet="Facturas_servicios" />
+          </AssociationSet>
           <AssociationSet Name="FK__Facturas__id_res__36B12243" Association="Self.FK__Facturas__id_res__36B12243">
             <End Role="Reservas" EntitySet="Reservas" />
             <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservas___id_re__3D5E1FD2" Association="Self.FK__Reservas___id_re__3D5E1FD2">
+            <End Role="Reservas" EntitySet="Reservas" />
+            <End Role="Reservas_servicios" EntitySet="Reservas_servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservas___id_se__3E52440B" Association="Self.FK__Reservas___id_se__3E52440B">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Reservas_servicios" EntitySet="Reservas_servicios" />
           </AssociationSet>
           <AssociationSet Name="FK__Reservas__id_cli__32E0915F" Association="Self.FK__Reservas__id_cli__32E0915F">
             <End Role="Clientes" EntitySet="Clientes" />
@@ -231,6 +315,7 @@
           <Property Name="id_factura" Type="Int32" Nullable="false" />
           <Property Name="id_reservas" Type="Int32" />
           <NavigationProperty Name="Reservas" Relationship="Self.FK__Facturas__id_res__36B12243" FromRole="Facturas" ToRole="Reservas" />
+          <NavigationProperty Name="Facturas_servicios" Relationship="Spa_EsterModel.FK__Facturas___id_fa__398D8EEE" FromRole="Facturas" ToRole="Facturas_servicios" />
         </EntityType>
         <EntityType Name="Metodos_Pago">
           <Key>
@@ -238,6 +323,7 @@
           </Key>
           <Property Name="id_metodos_pg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Reservas" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Metodos_Pago" ToRole="Reservas" />
+          <Property Name="nombre_metodo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Reservas">
           <Key>
@@ -251,6 +337,8 @@
           <NavigationProperty Name="Empleados" Relationship="Self.FK__Reservas__id_emp__31EC6D26" FromRole="Reservas" ToRole="Empleados" />
           <NavigationProperty Name="Facturas" Relationship="Self.FK__Facturas__id_res__36B12243" FromRole="Reservas" ToRole="Facturas" />
           <NavigationProperty Name="Metodos_Pago" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Reservas" ToRole="Metodos_Pago" />
+          <Property Name="fecha_reserva" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2" FromRole="Reservas" ToRole="Reservas_servicios" />
         </EntityType>
         <EntityType Name="Servicios">
           <Key>
@@ -260,6 +348,8 @@
           <Property Name="precio_ser" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="descripción_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="nombre_ser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Facturas_servicios" Relationship="Spa_EsterModel.FK__Facturas___id_se__3A81B327" FromRole="Servicios" ToRole="Facturas_servicios" />
+          <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_se__3E52440B" FromRole="Servicios" ToRole="Reservas_servicios" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -376,7 +466,93 @@
             <End Role="Metodos_Pago" EntitySet="Metodos_Pago" />
             <End Role="Reservas" EntitySet="Reservas" />
           </AssociationSet>
+          <EntitySet Name="Facturas_servicios" EntityType="Spa_EsterModel.Facturas_servicios" />
+          <EntitySet Name="Reservas_servicios" EntityType="Spa_EsterModel.Reservas_servicios" />
+          <AssociationSet Name="FK__Facturas___id_fa__398D8EEE" Association="Spa_EsterModel.FK__Facturas___id_fa__398D8EEE">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Facturas_servicios" EntitySet="Facturas_servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facturas___id_se__3A81B327" Association="Spa_EsterModel.FK__Facturas___id_se__3A81B327">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Facturas_servicios" EntitySet="Facturas_servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservas___id_re__3D5E1FD2" Association="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2">
+            <End Role="Reservas" EntitySet="Reservas" />
+            <End Role="Reservas_servicios" EntitySet="Reservas_servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservas___id_se__3E52440B" Association="Spa_EsterModel.FK__Reservas___id_se__3E52440B">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Reservas_servicios" EntitySet="Reservas_servicios" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Facturas_servicios">
+          <Key>
+            <PropertyRef Name="Id_facturas_servicios" />
+          </Key>
+          <Property Name="Id_facturas_servicios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_factura" Type="Int32" />
+          <Property Name="id_servicios" Type="Int32" />
+          <NavigationProperty Name="Facturas" Relationship="Spa_EsterModel.FK__Facturas___id_fa__398D8EEE" FromRole="Facturas_servicios" ToRole="Facturas" />
+          <NavigationProperty Name="Servicios" Relationship="Spa_EsterModel.FK__Facturas___id_se__3A81B327" FromRole="Facturas_servicios" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="Reservas_servicios">
+          <Key>
+            <PropertyRef Name="Id_reservas_servicios" />
+          </Key>
+          <Property Name="Id_reservas_servicios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_reservas" Type="Int32" />
+          <Property Name="id_servicios" Type="Int32" />
+          <NavigationProperty Name="Reservas" Relationship="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2" FromRole="Reservas_servicios" ToRole="Reservas" />
+          <NavigationProperty Name="Servicios" Relationship="Spa_EsterModel.FK__Reservas___id_se__3E52440B" FromRole="Reservas_servicios" ToRole="Servicios" />
+        </EntityType>
+        <Association Name="FK__Facturas___id_fa__398D8EEE">
+          <End Type="Spa_EsterModel.Facturas" Role="Facturas" Multiplicity="0..1" />
+          <End Type="Spa_EsterModel.Facturas_servicios" Role="Facturas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id_factura" />
+            </Principal>
+            <Dependent Role="Facturas_servicios">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facturas___id_se__3A81B327">
+          <End Type="Spa_EsterModel.Servicios" Role="Servicios" Multiplicity="0..1" />
+          <End Type="Spa_EsterModel.Facturas_servicios" Role="Facturas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="id_servicios" />
+            </Principal>
+            <Dependent Role="Facturas_servicios">
+              <PropertyRef Name="id_servicios" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservas___id_re__3D5E1FD2">
+          <End Type="Spa_EsterModel.Reservas" Role="Reservas" Multiplicity="0..1" />
+          <End Type="Spa_EsterModel.Reservas_servicios" Role="Reservas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservas">
+              <PropertyRef Name="id_reservas" />
+            </Principal>
+            <Dependent Role="Reservas_servicios">
+              <PropertyRef Name="id_reservas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservas___id_se__3E52440B">
+          <End Type="Spa_EsterModel.Servicios" Role="Servicios" Multiplicity="0..1" />
+          <End Type="Spa_EsterModel.Reservas_servicios" Role="Reservas_servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="id_servicios" />
+            </Principal>
+            <Dependent Role="Reservas_servicios">
+              <PropertyRef Name="id_servicios" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -430,6 +606,7 @@
           <EntitySetMapping Name="Metodos_Pago">
             <EntityTypeMapping TypeName="Spa_EsterModel.Metodos_Pago">
               <MappingFragment StoreEntitySet="Metodos_Pago">
+                <ScalarProperty Name="nombre_metodo" ColumnName="nombre_metodo" />
                 <ScalarProperty Name="id_metodos_pg" ColumnName="id_metodos_pg" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -437,6 +614,7 @@
           <EntitySetMapping Name="Reservas">
             <EntityTypeMapping TypeName="Spa_EsterModel.Reservas">
               <MappingFragment StoreEntitySet="Reservas">
+                <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
                 <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
                 <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />
                 <ScalarProperty Name="id_clientes" ColumnName="id_clientes" />
@@ -460,6 +638,24 @@
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas_servicios">
+            <EntityTypeMapping TypeName="Spa_EsterModel.Facturas_servicios">
+              <MappingFragment StoreEntitySet="Facturas_servicios">
+                <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+                <ScalarProperty Name="Id_facturas_servicios" ColumnName="Id_facturas_servicios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservas_servicios">
+            <EntityTypeMapping TypeName="Spa_EsterModel.Reservas_servicios">
+              <MappingFragment StoreEntitySet="Reservas_servicios">
+                <ScalarProperty Name="id_servicios" ColumnName="id_servicios" />
+                <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
+                <ScalarProperty Name="Id_reservas_servicios" ColumnName="Id_reservas_servicios" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

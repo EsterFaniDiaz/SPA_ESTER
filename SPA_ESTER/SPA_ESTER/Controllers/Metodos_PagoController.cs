@@ -46,7 +46,7 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_metodos_pg")] Metodos_Pago metodos_Pago)
+        public ActionResult Create([Bind(Include = "id_metodos_pg,nombre_metodo")] Metodos_Pago metodos_Pago)
         {
             if (ModelState.IsValid)
             {
