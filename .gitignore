@@ -1,0 +1,16 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/SPA_ESTER/.vs/SPA_ESTER/FileContentIndex
+/SPA_ESTER/.vs/SPA_ESTER/v17/DocumentLayout.json
+/SPA_ESTER/.vs/SPA_ESTER/v17
+/SPA_ESTER/SPA_ESTER/obj/Debug/SPA_ESTER.csproj.AssemblyReference.cache
+/SPA_ESTER/ClassLibrary1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/SPA_ESTER/.vs/SPA_ESTER/config/applicationhost.config
+/SPA_ESTER/.vs/SPA_ESTER/config/applicationhost.config
+/SPA_ESTER/ClassLibrary1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/SPA_ESTER/SPA_ESTER/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/SPA_ESTER/SPA_ESTER/obj/Debug/SPA_ESTER.csproj.AssemblyReference.cache
+/SPA_ESTER/SPA_CLIENTE/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/SPA_ESTER/SPA_CLIENTE/obj/Debug/SPA_CLIENTE.csproj.AssemblyReference.cache

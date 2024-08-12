@@ -22,7 +22,13 @@ namespace ClassLibrary1.Models
         }
 
         public int id_usuario { get; set; }
+
+        [Required(ErrorMessage = "El usuario es obligatorio.")]
+        [StringLength(100, ErrorMessage = "El usuario no puede exceder los 100 caracteres.")]
         public string usuario { get; set; }
+
+        [Required(ErrorMessage = "La contraseña es obligatoria.")]
+        [StringLength(100, ErrorMessage = "La contraseña no puede exceder los 100 caracteres.")]
         public string contraseña { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
