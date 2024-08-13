@@ -24,5 +24,17 @@ namespace ClassLibrary1.Models
 
         public virtual Reservas Reservas { get; set; }
         public virtual ICollection<Facturas_servicios> Facturas_servicios { get; set; }
+         
+        public string estado_reserva { get; set; }
+        public Nullable<int> id_empleados { get; set; }
+        public Nullable<int> id_clientes { get; set; }
+        public Nullable<int> id_metodos_pg { get; set; }
+        public Nullable<int> id_servicios { get; set; }
+        public Nullable<System.DateTime> fecha_reserva { get; set; }
+
+        public virtual Clientes Clientes { get; set; }
+        public virtual Empleados Empleados { get; set; }
+        public virtual Metodos_Pago Metodos_Pago { get; set; }
+        public virtual Servicios Servicio { get; set; } 
     }
 }

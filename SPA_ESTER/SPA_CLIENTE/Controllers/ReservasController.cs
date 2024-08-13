@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ClassLibrary1;
+using ClassLibrary1.Models;
 using ClassLibrary1.ViewModels;
 
 namespace SPA_CLIENTE.Controllers
@@ -17,9 +18,22 @@ namespace SPA_CLIENTE.Controllers
         private Spa_EsterEntities db = new Spa_EsterEntities();
 
         // GET: Reservas
-         
+
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                // Obtiene el nombre de usuario
+                string username = User.Identity.Name;
+
+                // Puedes hacer algo con el nombre de usuario, como buscar información adicional en la base de datos
+                ViewBag.Username = username;
+            }
+            else
+            {
+                ViewBag.Username = "Invitado";
+            }
+
             var reservas = db.Reservas.Include(r => r.Clientes).Include(r => r.Empleados).Include(r => r.Metodos_Pago);
             return View(reservas.ToList());
         }
@@ -46,6 +60,51 @@ namespace SPA_CLIENTE.Controllers
             ViewBag.id_empleados = new SelectList(db.Empleados, "id_empleados", "nombre_emp");
             ViewBag.id_metodos_pg = new SelectList(db.Metodos_Pago, "id_metodos_pg", "id_metodos_pg");
             return View();
+        }
+
+
+        public ActionResult ListarReservas()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                // Obtiene el nombre de usuario
+                string username1 = User.Identity.Name;
+
+                // Puedes hacer algo con el nombre de usuario, como buscar información adicional en la base de datos
+                ViewBag.Username = username1;
+            }
+            else
+            {
+                ViewBag.Username = "Invitado";
+            }
+
+            var reservas = db.Reservas.Include(r => r.Clientes).Include(r => r.Empleados).Include(r => r.Metodos_Pago).Include(r => r.Reservas_servicios);
+
+            // Obtiene el nombre de usuario
+            string username = User.Identity.Name;
+
+            var usuario = db.Usuarios.FirstOrDefault(u => u.usuario == username);
+            var cliente = usuario != null ? db.Clientes.FirstOrDefault(u => u.id_usuario == usuario.id_usuario) : null;
+
+            // Mapeo manual de Reservas a ListarReservasModel
+            var listarReservas = reservas.Select(r => new ListarReservasModel
+            {
+                id_reservas = r.id_reservas,
+                estado_reserva = r.estado_reserva,
+                id_empleados = r.id_empleados,
+                id_clientes = r.id_clientes,
+                id_metodos_pg = r.id_metodos_pg,
+                fecha_reserva = r.fecha_reserva,
+                Clientes = r.Clientes,
+                Empleados = r.Empleados,
+                Metodos_Pago = r.Metodos_Pago,
+                Servicio = r.Reservas_servicios.FirstOrDefault().Servicios,
+                Facturas = r.Facturas,
+                Reservas_servicios = r.Reservas_servicios,
+                id_factura = r.Facturas.FirstOrDefault().id_factura,
+            }).Where(re => re.estado_reserva != null && re.estado_reserva != "CANCELADA" && re.id_clientes == cliente.id_clientes).ToList();
+
+            return View(listarReservas.ToList());
         }
 
         // GET: Reservas/CreateReseva
@@ -97,7 +156,8 @@ namespace SPA_CLIENTE.Controllers
                 {
                     id_clientes = cliente.id_clientes,
                     id_metodos_pg = reservasModel.id_metodos_pg,
-                    fecha_reserva = reservasModel.FechaHora
+                    fecha_reserva = reservasModel.FechaHora,
+                    estado_reserva = "DESASIGNADA"
                 };
 
                 db.Reservas.Add(reservas);
@@ -113,7 +173,7 @@ namespace SPA_CLIENTE.Controllers
 
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarReservas");
             }
 
             ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl", reservasModel.id_clientes);
@@ -180,9 +240,16 @@ namespace SPA_CLIENTE.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Reservas reservas = db.Reservas.Find(id);
-            db.Reservas.Remove(reservas);
+            if (reservas == null)
+            {
+                return HttpNotFound();
+            }
+
+            reservas.estado_reserva = "CANCELADA";
+            db.Entry(reservas).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            return RedirectToAction("ListarReservas");
         }
 
         protected override void Dispose(bool disposing)

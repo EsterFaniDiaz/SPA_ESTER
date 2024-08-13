@@ -56,6 +56,7 @@
     <EntitySetMapping Name="Reservas">
       <EntityTypeMapping TypeName="Spa_EsterModel.Reservas">
         <MappingFragment StoreEntitySet="Reservas">
+          <ScalarProperty Name="estado_reserva" ColumnName="estado_reserva" />
           <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
           <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
           <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />

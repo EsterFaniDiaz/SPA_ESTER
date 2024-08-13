@@ -68,6 +68,7 @@
     <NavigationProperty Name="Metodos_Pago" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Reservas" ToRole="Metodos_Pago" />
     <Property Name="fecha_reserva" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2" FromRole="Reservas" ToRole="Reservas_servicios" />
+    <Property Name="estado_reserva" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Servicios">
     <Key>

@@ -26,6 +26,7 @@ namespace ClassLibrary1
         public Nullable<int> id_clientes { get; set; }
         public Nullable<int> id_metodos_pg { get; set; }
         public Nullable<System.DateTime> fecha_reserva { get; set; }
+        public string estado_reserva { get; set; }
     
         public virtual Clientes Clientes { get; set; }
         public virtual Empleados Empleados { get; set; }

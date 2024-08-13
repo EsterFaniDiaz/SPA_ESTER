@@ -13,24 +13,28 @@ namespace ClassLibrary1.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class ReservasModel
+    public partial class ListarReservasModel
     {
-        public ReservasModel()
+        public ListarReservasModel()
         {
             this.Facturas = new HashSet<Facturas>();
             this.Reservas_servicios = new HashSet<Reservas_servicios>();
         }
 
         public int id_reservas { get; set; }
+        public string estado_reserva { get; set; }
         public Nullable<int> id_empleados { get; set; }
         public Nullable<int> id_clientes { get; set; }
         public Nullable<int> id_metodos_pg { get; set; }
+        public Nullable<int> id_servicios { get; set; }
+        public Nullable<int> id_factura { get; set; }
         public Nullable<System.DateTime> fecha_reserva { get; set; }
 
         public virtual Clientes Clientes { get; set; }
         public virtual Empleados Empleados { get; set; }
         public virtual ICollection<Facturas> Facturas { get; set; }
         public virtual Metodos_Pago Metodos_Pago { get; set; }
+        public virtual Servicios Servicio { get; set; }
         public virtual ICollection<Reservas_servicios> Reservas_servicios { get; set; }
     }
 }

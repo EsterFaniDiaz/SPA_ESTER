@@ -1,0 +1,115 @@
+﻿@model ClassLibrary1.Models.FacturasModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    @*<link rel="stylesheet" href="style.css">*@
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        h1, h4, h5 {
+            color: #343a40;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="mb-0">FACTURA</h1>
+            </div>
+            <div class="col-md-6 text-right">
+                <h4>FACTURA N. 00 @Html.DisplayFor(model => model.id_factura)</h4>
+                <p id="fecha-en-letras"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <p><strong>@Html.DisplayFor(model => model.Clientes.nombre_cl)</strong></p>
+                <p>Teléfono del cliente: @Html.DisplayFor(model => model.Clientes.teléfono_cl)</p>
+                <p>Dirección del cliente: @Html.DisplayFor(model => model.Clientes.dirección_cl)</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <p>Reserva: <strong>R00 @Html.DisplayFor(model => model.id_reservas)</strong></p>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>SERVICIO</th>
+                    <th>CANTIDAD/HORAS</th>
+                    <th>PRECIO UNITARIO</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.Servicio.nombre_ser)</td>
+                    <td>1</td>
+                    <td>$@Html.DisplayFor(model => model.Servicio.precio_ser)</td>
+                    <td>$@Html.DisplayFor(model => model.Servicio.precio_ser)</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>TOTAL</strong></td>
+                    <td><strong>$@Html.DisplayFor(model => model.Servicio.precio_ser)</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h5>Detalles de Pago</h5>
+                <p>Banco: ABC Bank</p>
+                <p>Número de Cuenta: 123456789</p>
+                <p>CLABE: 012345678901234567</p>
+            </div>
+        </div>
+
+        <p>
+            <!-- Enlace "Regresar" estilizado como un botón secundario -->
+            @Html.ActionLink("Regresar", "ListarReservas", "Reservas", null, new { @class = "btn btn-primary btn-sm" })
+        </p>
+    </div>
+</body>
+</html>
+<script>
+    function obtenerFechaEnLetras(fecha) {
+        const meses = [
+            "enero", "febrero", "marzo", "abril", "mayo", "junio",
+            "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+        ];
+        const dia = fecha.getDate();
+        const mes = meses[fecha.getMonth()];
+        const anio = fecha.getFullYear();
+
+        return `Fecha: ${dia} de ${mes} de ${anio}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const fechaActual = new Date();
+        const fechaEnLetras = obtenerFechaEnLetras(fechaActual);
+        document.getElementById("fecha-en-letras").textContent = fechaEnLetras;
+    });
+
+</script>

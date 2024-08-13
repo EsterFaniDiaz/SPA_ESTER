@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
@@ -17,12 +17,43 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                      
+                    @if (ViewBag.Username != null && ViewBag.Username != "Invitado")
+                    {
+                        <li class="nav-link active">
+                            @using (Html.BeginForm("Logout", "Login"))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <input class="dropdown-item" value="Cerrar Sesión" type="submit" />
+                            }
+                        </li>
+
+                        <li class="nav-link active">
+                            <a class="nav-link" href="@Url.Action("ListarReservas","Reservas")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Reservas
+                            </a>
+
+                        </li>
+                    }
+                    else
+                    {
+
+                        <li class="nav-link active">
+                            <a class="nav-link" href="@Url.Action("Login","Login")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Iniciar Sesión
+                            </a>
+
+                        </li>
+
+                    }
+
                 </ul>
             </div>
         </div>
-    </nav> 
-    <div >
+    </nav>
+    <div>
         @RenderBody()
     </div>
 

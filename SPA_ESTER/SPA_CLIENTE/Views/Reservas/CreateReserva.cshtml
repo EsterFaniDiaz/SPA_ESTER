@@ -12,6 +12,7 @@
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+    @Html.HiddenFor(model => model.id_servicios)
     <div class="container mt-5 p-3 rounded cart">
         <div class="row no-gutters">
             <div class="col-md-8">

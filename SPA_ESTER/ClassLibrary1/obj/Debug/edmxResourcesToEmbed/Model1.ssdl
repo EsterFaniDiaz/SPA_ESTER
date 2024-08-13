@@ -64,6 +64,7 @@
     <Property Name="id_clientes" Type="int" />
     <Property Name="id_metodos_pg" Type="int" />
     <Property Name="fecha_reserva" Type="datetime" />
+    <Property Name="estado_reserva" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Reservas_servicios">
     <Key>

@@ -245,6 +245,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\ServiciosDetails.cshtml" />
     <Content Include="Views\Login\UsuarioClienteRegistrar.cshtml" />
+    <Content Include="Views\Reservas\ListarReservas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

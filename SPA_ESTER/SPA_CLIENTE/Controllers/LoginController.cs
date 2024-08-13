@@ -30,8 +30,11 @@ namespace SPA_CLIENTE.Controllers
             {
                 var usuario = db.Usuarios
                     .FirstOrDefault(u => u.usuario == model.usuario && u.contraseña == model.contraseña);
+                 
+                var cliente = usuario != null ? db.Clientes
+                    .FirstOrDefault(u => u.id_usuario == usuario.id_usuario) : null;
 
-                if (usuario != null)
+                if (usuario != null && cliente != null)
                 {
                     // Aquí puedes implementar la lógica para establecer la sesión del usuario
                     FormsAuthentication.SetAuthCookie(usuario.usuario, false);
@@ -53,10 +56,19 @@ namespace SPA_CLIENTE.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registrar([Bind(Include = "nombre_cl,Numero_Documento,teléfono_cl,dirección_cl,correo_cl,id_usuario")] UsuarioClientesModel viewModel)
+        public ActionResult Registrar([Bind(Include = "nombre_cl,Numero_Documento,teléfono_cl,dirección_cl,correo_cl,id_usuario,usuario,contraseña,ConfirmPassword")] UsuarioClientesModel viewModel)
         {
             if (ModelState.IsValid)
             {
+
+                var usuario = new Usuarios
+                {
+                    usuario = viewModel.usuario,
+                    contraseña = viewModel.contraseña
+                };
+
+                db.Usuarios.Add(usuario);
+                db.SaveChanges();
 
                 var clientes = new Clientes
                 {
@@ -65,16 +77,17 @@ namespace SPA_CLIENTE.Controllers
                     teléfono_cl = viewModel.teléfono_cl,
                     dirección_cl = viewModel.dirección_cl,
                     correo_cl = viewModel.correo_cl,
-                    //id_usuario = viewModel.id_usuario
+                    id_usuario = usuario.id_usuario
                 };
+
 
                 db.Clientes.Add(clientes);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
             //ViewBag.id_usuario = new SelectList(db.Usuarios, "id_usuario", "usuario", viewModel.id_usuario);
-            return View(viewModel);
+            return RedirectToAction("UsuarioClienteRegistrar");
         }
 
         [HttpPost]

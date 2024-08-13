@@ -17,6 +17,21 @@ namespace SPA_CLIENTE.Controllers
         // GET: Servicios
         public ActionResult Index()
         {
+
+            if (User.Identity.IsAuthenticated)
+            {
+                // Obtiene el nombre de usuario
+                string username = User.Identity.Name;
+
+                // Puedes hacer algo con el nombre de usuario, como buscar información adicional en la base de datos
+                ViewBag.Username = username;
+            }
+            else
+            {
+                ViewBag.Username = "Invitado";
+            }
+
+
             return View(db.Servicios.ToList());
         }
 

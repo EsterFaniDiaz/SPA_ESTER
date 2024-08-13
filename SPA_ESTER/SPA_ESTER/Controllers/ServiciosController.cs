@@ -133,7 +133,23 @@ namespace SPA_ESTER.Controllers
 
                 db.Entry(servicioAnterior).State = EntityState.Modified;
 
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException e)
+                {
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        Console.WriteLine($"Entidad \"{eve.Entry.Entity.GetType().Name}\" en estado \"{eve.Entry.State}\" tiene los siguientes errores de validación:");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Console.WriteLine($"- Propiedad: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                    throw; // Puedes relanzar la excepción si deseas que el flujo normal de errores continúe.
+                }
+
                 return RedirectToAction("Index");
             }
             return View(servicios);

@@ -25,7 +25,10 @@ namespace SPA_ESTER.Controllers
                 var usuario = db.Usuarios
                     .FirstOrDefault(u => u.usuario == model.usuario && u.contraseña == model.contraseña);
 
-                if (usuario != null)
+                var administrador = usuario != null ? db.Administrador
+                    .FirstOrDefault(u => u.id_usuario == usuario.id_usuario) : null;
+
+                if (usuario != null && administrador != null)
                 {
                     // Aquí puedes implementar la lógica para establecer la sesión del usuario
                     FormsAuthentication.SetAuthCookie(usuario.usuario, false);

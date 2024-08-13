@@ -69,6 +69,7 @@
           <Property Name="id_clientes" Type="int" />
           <Property Name="id_metodos_pg" Type="int" />
           <Property Name="fecha_reserva" Type="datetime" />
+          <Property Name="estado_reserva" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Reservas_servicios">
           <Key>
@@ -340,6 +341,7 @@
           <NavigationProperty Name="Metodos_Pago" Relationship="Self.FK__Reservas__id_met__33D4B598" FromRole="Reservas" ToRole="Metodos_Pago" />
           <Property Name="fecha_reserva" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Reservas_servicios" Relationship="Spa_EsterModel.FK__Reservas___id_re__3D5E1FD2" FromRole="Reservas" ToRole="Reservas_servicios" />
+          <Property Name="estado_reserva" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Servicios">
           <Key>
@@ -616,6 +618,7 @@
           <EntitySetMapping Name="Reservas">
             <EntityTypeMapping TypeName="Spa_EsterModel.Reservas">
               <MappingFragment StoreEntitySet="Reservas">
+                <ScalarProperty Name="estado_reserva" ColumnName="estado_reserva" />
                 <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
                 <ScalarProperty Name="id_reservas" ColumnName="id_reservas" />
                 <ScalarProperty Name="id_empleados" ColumnName="id_empleados" />

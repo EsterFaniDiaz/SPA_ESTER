@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
+using ClassLibrary1.Models;
 using System.Web.Mvc;
 using ClassLibrary1;
 
@@ -21,6 +21,32 @@ namespace SPA_ESTER.Controllers
         {
             var reservas = db.Reservas.Include(r => r.Clientes).Include(r => r.Empleados).Include(r => r.Metodos_Pago);
             return View(reservas.ToList());
+        }
+
+        public ActionResult ListarReservas()
+        {
+            var reservas = db.Reservas.Include(r => r.Clientes).Include(r => r.Empleados).Include(r => r.Metodos_Pago).Include(r => r.Reservas_servicios);
+
+
+            // Mapeo manual de Reservas a ListarReservasModel
+            var listarReservas = reservas.Select(r => new ListarReservasModel
+            {
+                id_reservas = r.id_reservas,
+                estado_reserva = r.estado_reserva,
+                id_empleados = r.id_empleados,
+                id_clientes = r.id_clientes,
+                id_metodos_pg = r.id_metodos_pg,
+                fecha_reserva = r.fecha_reserva,
+                Clientes = r.Clientes,
+                Empleados = r.Empleados,
+                Metodos_Pago = r.Metodos_Pago,
+                Servicio = r.Reservas_servicios.FirstOrDefault().Servicios, 
+                Facturas = r.Facturas,
+                Reservas_servicios = r.Reservas_servicios,
+                id_factura = r.Facturas.FirstOrDefault().id_factura,
+            }).Where( re => re.estado_reserva != null && re.estado_reserva != "CANCELADA").ToList();
+
+            return View(listarReservas.ToList());
         }
 
         // GET: Reservas/Details/5
@@ -58,7 +84,7 @@ namespace SPA_ESTER.Controllers
             {
                 db.Reservas.Add(reservas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarReservas");
             }
 
             ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl", reservas.id_clientes);
@@ -90,13 +116,14 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_reservas,id_empleados,id_clientes,id_metodos_pg")] Reservas reservas)
+        public ActionResult Edit([Bind(Include = "id_reservas,id_empleados,id_clientes,id_metodos_pg,estado_reserva,fecha_reserva")] Reservas reservas)
         {
             if (ModelState.IsValid)
             {
+                reservas.estado_reserva = "ASIGNADA"; 
                 db.Entry(reservas).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarReservas");
             }
             ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl", reservas.id_clientes);
             ViewBag.id_empleados = new SelectList(db.Empleados, "id_empleados", "nombre_emp", reservas.id_empleados);
@@ -123,11 +150,18 @@ namespace SPA_ESTER.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {
+        { 
             Reservas reservas = db.Reservas.Find(id);
-            db.Reservas.Remove(reservas);
+            if (reservas == null)
+            {
+                return HttpNotFound();
+            }
+
+            reservas.estado_reserva = "CANCELADA";
+            db.Entry(reservas).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            return RedirectToAction("ListarReservas");
         }
 
         protected override void Dispose(bool disposing)
