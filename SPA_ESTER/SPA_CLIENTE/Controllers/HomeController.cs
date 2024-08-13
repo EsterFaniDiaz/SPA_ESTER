@@ -73,6 +73,23 @@ namespace SPA_CLIENTE.Controllers
 
 
 
+        // GET: Servicios/Details/5
+        public ActionResult ServiciosDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Servicios servicios = db.Servicios.Find(id);
+            if (servicios == null)
+            {
+                return HttpNotFound();
+            }
+            return View(servicios);
+        }
+
+
+
         // GET: Reservas/CreateReseva
         public ActionResult Reserva(int? id_servicios)
         {

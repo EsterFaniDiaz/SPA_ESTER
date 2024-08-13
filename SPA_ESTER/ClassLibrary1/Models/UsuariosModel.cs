@@ -9,12 +9,11 @@
 
 namespace ClassLibrary1.Models
 {
-    using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class UsuariosModel
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UsuariosModel()
         {
             this.Administrador = new HashSet<Administrador>();
@@ -27,13 +26,12 @@ namespace ClassLibrary1.Models
         [StringLength(100, ErrorMessage = "El usuario no puede exceder los 100 caracteres.")]
         public string usuario { get; set; }
 
-        [Required(ErrorMessage = "La contraseña es obligatoria.")]
-        [StringLength(100, ErrorMessage = "La contraseña no puede exceder los 100 caracteres.")]
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Contraseña")]
         public string contraseña { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Administrador> Administrador { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Clientes> Clientes { get; set; }
     }
 }

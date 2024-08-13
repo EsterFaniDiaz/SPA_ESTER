@@ -15,7 +15,6 @@
         .sb-sidenav.sb-sidenav-dark {
             background-color: #06778A !important;
         }
-
     </style>
 
 </head>
@@ -31,7 +30,14 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                    <li><a class="dropdown-item" href="#!">Cerrar Sesión</a></li>
+                    <li>
+                        @using (Html.BeginForm("Logout", "Login"))
+                        {
+
+                            @Html.AntiForgeryToken()
+                            <input class="dropdown-item" value="Cerrar Sesión" type="submit" />
+                        }
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -87,7 +93,7 @@
 
                     </div>
                 </div>
-               
+
             </nav>
         </div>
         <div id="layoutSidenav_content">

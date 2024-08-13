@@ -1,17 +1,11 @@
-﻿ 
-namespace ClassLibrary1.ViewModels
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-    public partial class ClientesViewModel
-    {
-        public ClientesViewModel()
-        {
-            this.Reservas = new HashSet<Reservas>();
-        }
-         
+
+namespace ClassLibrary1.Models
+{
+    public partial class UsuarioClientesModel
+    { 
 
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
@@ -32,9 +26,20 @@ namespace ClassLibrary1.ViewModels
         [StringLength(100, ErrorMessage = "El correo no puede exceder los 100 caracteres.")]
         public string correo_cl { get; set; }
 
-        public Nullable<int> id_usuario { get; set; }
+        [Required(ErrorMessage = "El usuario es obligatorio.")]
+        [StringLength(100, ErrorMessage = "El usuario no puede exceder los 100 caracteres.")]
+        public string usuario { get; set; }
 
-        public virtual Usuarios Usuarios { get; set; }
-        public virtual ICollection<Reservas> Reservas { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Contraseña")]
+        public string contraseña { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirmar Contraseña")]
+        [Compare("contraseña", ErrorMessage = "Las contraseñas no coinciden.")]
+        public string ConfirmPassword { get; set; }
+
     }
 }

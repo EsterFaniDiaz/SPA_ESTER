@@ -11,11 +11,13 @@ using ClassLibrary1.ViewModels;
 
 namespace SPA_CLIENTE.Controllers
 {
+    [Authorize]
     public class ReservasController : Controller
     {
         private Spa_EsterEntities db = new Spa_EsterEntities();
 
         // GET: Reservas
+         
         public ActionResult Index()
         {
             var reservas = db.Reservas.Include(r => r.Clientes).Include(r => r.Empleados).Include(r => r.Metodos_Pago);
@@ -59,6 +61,7 @@ namespace SPA_CLIENTE.Controllers
             ReservasViewModel reservasViewModel = new ReservasViewModel();
 
             reservasViewModel.Servicios = new List<Servicios> { Servicio };
+            reservasViewModel.id_servicios = id_servicios;
 
 
             ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl");
@@ -73,19 +76,50 @@ namespace SPA_CLIENTE.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_reservas,id_empleados,id_clientes,id_metodos_pg")] Reservas reservas)
+        public ActionResult Create([Bind(Include = "id_metodos_pg,FechaHora,id_servicios")] ReservasViewModel reservasModel)
         {
             if (ModelState.IsValid)
             {
+                if (!User.Identity.IsAuthenticated)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                // Obtiene el nombre de usuario
+                string username = User.Identity.Name;
+
+                var usuario = db.Usuarios.Where(u => u.usuario == username).FirstOrDefault();
+                var cliente = db.Clientes.Where(c => c.id_usuario == usuario.id_usuario).FirstOrDefault();
+
+                reservasModel.id_clientes = cliente.id_clientes;
+
+                Reservas reservas = new Reservas
+                {
+                    id_clientes = cliente.id_clientes,
+                    id_metodos_pg = reservasModel.id_metodos_pg,
+                    fecha_reserva = reservasModel.FechaHora
+                };
+
                 db.Reservas.Add(reservas);
                 db.SaveChanges();
+
+                Reservas_servicios reservas_Servicios = new Reservas_servicios
+                {
+                    id_reservas = reservas.id_reservas,
+                    id_servicios = reservasModel.id_servicios
+                };
+
+                db.Reservas_servicios.Add(reservas_Servicios);
+
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl", reservas.id_clientes);
-            ViewBag.id_empleados = new SelectList(db.Empleados, "id_empleados", "nombre_emp", reservas.id_empleados);
-            ViewBag.id_metodos_pg = new SelectList(db.Metodos_Pago, "id_metodos_pg", "id_metodos_pg", reservas.id_metodos_pg);
-            return View(reservas);
+            ViewBag.id_clientes = new SelectList(db.Clientes, "id_clientes", "nombre_cl", reservasModel.id_clientes);
+            ViewBag.id_empleados = new SelectList(db.Empleados, "id_empleados", "nombre_emp", reservasModel.id_empleados);
+            ViewBag.id_metodos_pg = new SelectList(db.Metodos_Pago, "id_metodos_pg", "id_metodos_pg", reservasModel.id_metodos_pg);
+            return View(reservasModel);
         }
 
         // GET: Reservas/Edit/5

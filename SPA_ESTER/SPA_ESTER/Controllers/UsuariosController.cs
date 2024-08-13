@@ -10,6 +10,8 @@ using ClassLibrary1;
 
 namespace SPA_ESTER.Controllers
 {
+
+    [Authorize]
     public class UsuariosController : Controller
     {
         private Spa_EsterEntities db = new Spa_EsterEntities();

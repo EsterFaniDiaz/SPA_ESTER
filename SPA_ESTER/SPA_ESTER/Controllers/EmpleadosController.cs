@@ -7,9 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ClassLibrary1;
+using ClassLibrary1.Models;
 
 namespace SPA_ESTER.Controllers
 {
+
+    [Authorize]
     public class EmpleadosController : Controller
     {
         private Spa_EsterEntities db = new Spa_EsterEntities();
@@ -46,11 +49,19 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_empleados,nombre_emp,teléfono_emp,dirección_emp,correo_emp")] Empleados empleados)
+        public ActionResult Create([Bind(Include = "id_empleados,nombre_emp,teléfono_emp,dirección_emp,correo_emp")] EmpleadosModel empleados)
         {
             if (ModelState.IsValid)
             {
-                db.Empleados.Add(empleados);
+                Empleados empleados1 = new Empleados
+                {
+                    nombre_emp = empleados.nombre_emp,
+                    teléfono_emp = empleados.teléfono_emp,
+                    dirección_emp = empleados.dirección_emp,
+                    correo_emp = empleados.correo_emp
+                };
+
+                db.Empleados.Add(empleados1);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,11 +77,21 @@ namespace SPA_ESTER.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Empleados empleados = db.Empleados.Find(id);
+
+            EmpleadosModel empleadosModel = new EmpleadosModel
+            {
+                id_empleados = empleados.id_empleados,
+                nombre_emp = empleados.nombre_emp,
+                teléfono_emp = empleados.teléfono_emp,
+                dirección_emp = empleados.dirección_emp,
+                correo_emp = empleados.correo_emp
+            }; 
+
             if (empleados == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(empleadosModel);
         }
 
         // POST: Empleados/Edit/5
@@ -78,10 +99,17 @@ namespace SPA_ESTER.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_empleados,nombre_emp,teléfono_emp,dirección_emp,correo_emp")] Empleados empleados)
+        public ActionResult Edit([Bind(Include = "id_empleados,nombre_emp,teléfono_emp,dirección_emp,correo_emp")] EmpleadosModel empleados)
         {
             if (ModelState.IsValid)
             {
+                Empleados empleados1 = db.Empleados.Find(empleados.id_empleados);
+                empleados1.nombre_emp = empleados.nombre_emp;
+                empleados1.teléfono_emp = empleados.teléfono_emp;
+                empleados1.dirección_emp = empleados.dirección_emp;
+                empleados1.correo_emp = empleados.correo_emp;
+
+
                 db.Entry(empleados).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

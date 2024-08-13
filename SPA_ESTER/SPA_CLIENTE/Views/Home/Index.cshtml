@@ -4,36 +4,6 @@
     ViewBag.Title = "Spa Ester";
 }
 
-@*<div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +23,7 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Amarse es un ritual</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Spa Ester el ritual que tu cuerpo necesita</p>
+                <p class="lead fw-normal text-white-50 mb-0">Spa Harmony, el ritual que tu cuerpo necesita</p>
             </div>
         </div>
     </header>
@@ -83,7 +53,7 @@
                         </div>
 
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">@Html.ActionLink("Add to cart", "Reserva", new { id_servicios = item.id_servicios }, new { @class = "btn btn-outline-dark mt-auto"})</div>
+                            <div class="text-center">@Html.ActionLink("Ver Más", "ServiciosDetails", new { id = item.id_servicios }, new { @class = "btn btn-outline-dark mt-auto"})</div>
                         </div>
 
                     </div>

@@ -83,6 +83,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioClientesModel.cs" />
     <Compile Include="Models\ReservasModel.cs" />
     <Compile Include="Models\FacturasModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />

@@ -11,6 +11,8 @@ using ClassLibrary1.ViewModels;
 
 namespace SPA_ESTER.Controllers
 {
+
+    [Authorize]
     public class ClientesController : Controller
     {
         private Spa_EsterEntities db = new Spa_EsterEntities();
